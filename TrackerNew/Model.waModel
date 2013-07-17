@@ -24,7 +24,7 @@
 
 		<BillDocument ____objectunic="true" panelColor="#70CCC2">
 
-			<panel ____objectunic="true" isOpen="false" pathVisible="true">
+			<panel ____objectunic="true" isOpen="true" pathVisible="true">
 
 				<position ____objectunic="true" X="56" Y="17"/>
 </panel>
@@ -32,7 +32,7 @@
 
 		<BillSubject ____objectunic="true" panelColor="#D8D8D8">
 
-			<panel ____objectunic="true" isOpen="false" pathVisible="true">
+			<panel ____objectunic="true" isOpen="true" pathVisible="true">
 
 				<position ____objectunic="true" X="499" Y="47"/>
 </panel>
@@ -382,7 +382,7 @@
 </panel>
 </extraProperties>
 
-	<attributes name="ID" kind="storage" scope="public" uuid="1630A884215BA745AFBBE865DE6543DB" unique="true" autogenerate="true" type="uuid" indexKind="btree" primKey="true"/>
+	<attributes name="ID" kind="storage" scope="public" uuid="1630A884215BA745AFBBE865DE6543DB" unique="true" autogenerate="true" type="uuid" indexKind="btree"/>
 
 	<attributes name="title" kind="storage" scope="public" uuid="D584902DE5566C4AADEF17D36E4ADB61" type="string"/>
 
@@ -420,6 +420,8 @@
 
 	<attributes name="legislativeEvents" kind="relatedEntities" scope="public" type="LegislativeEvents" reversePath="true" path="bill"/>
 
+	<key name="ID"/>
+
 </dataClasses>
 
 <dataClasses name="BillDocument" className="BillDocument" collectionName="BillDocuments" scope="public" uuid="665880ECE85B6849888E62D99C1B97F9">
@@ -432,15 +434,13 @@
 </panel>
 </extraProperties>
 
-	<attributes name="ID" kind="storage" scope="public" uuid="C7A99E609A04F8459324CB8FDCAA6FC4" unique="true" autogenerate="true" type="uuid" indexKind="btree"/>
+	<attributes name="ID" kind="storage" scope="public" uuid="C7A99E609A04F8459324CB8FDCAA6FC4" unique="true" autogenerate="true" type="uuid" indexKind="btree" primKey="true"/>
 
 	<attributes name="url" kind="storage" scope="public" uuid="ED0EFFBFDEC5EA4D9E95B88D5841CC20" type="string"/>
 
 	<attributes name="name" kind="storage" scope="public" uuid="0E0FDC11DB17B44A9565F0CB14332DC6" type="string"/>
 
 	<attributes name="bill_document" kind="relatedEntity" scope="public" uuid="D2981A190BB9164A9DC58338DD83CAEC" type="Bill" path="Bill"/>
-
-	<key name="ID"/>
 
 </dataClasses>
 
@@ -454,13 +454,11 @@
 </panel>
 </extraProperties>
 
-	<attributes name="ID" kind="storage" scope="public" uuid="AB4EE614BE242D4F98B0BC2788BCF0F7" unique="true" autogenerate="true" type="uuid" indexKind="btree"/>
+	<attributes name="ID" kind="storage" scope="public" uuid="AB4EE614BE242D4F98B0BC2788BCF0F7" unique="true" autogenerate="true" type="uuid" indexKind="btree" primKey="true"/>
 
 	<attributes name="subject" kind="storage" scope="public" uuid="81145FF0609D544FBF8C578ADE9AFBF3" type="string"/>
 
 	<attributes name="bill" kind="relatedEntity" scope="public" uuid="349CE337F2544A46A7862751318286D8" type="Bill" path="Bill"/>
-
-	<key name="ID"/>
 
 </dataClasses>
 

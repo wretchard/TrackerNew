@@ -63,7 +63,7 @@
 	 
 }
 
-#menuItemIssue {
+#menuItemUserCustom {
 	 width: 110px;
 	 height: 30px;
 	 top: 0px;
@@ -73,13 +73,27 @@
 	 
 }
 
-#menuItemUserCustom {
+#menuItemFind {
 	 width: 110px;
 	 height: 30px;
 	 top: 0px;
 	 left: 0px;
 	
 	 position: absolute;
+	 
+}
+
+#richTextStateName {
+	 width: 220px;
+	 height: 28px;
+	 top: 2px;
+	 left: 341px;
+	
+	 position: absolute;
+	 background-color: transparent;
+	 font-weight: bold;
+	 font-size: 24px;
+	 color: rgb(153, 153, 153);
 	 
 }
 
