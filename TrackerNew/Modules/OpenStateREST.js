@@ -128,6 +128,9 @@ try {
 		{
      	resultObj = JSON.parse(result);
      	}
+     else if (
+     	headersObj['Content-Type'] && headersObj['Content-Type'].indexOf('json') == -1)
+     	{resultObj = JSON.parse(result);}
      else
 	 { // not JSON, return text
          resultTxt = result;
@@ -949,8 +952,8 @@ function TemporaryFixer() {
 }	
 }
 
-ClearOpenStateData('StateMetaData');
-TestData('StateMetaData');
+//ClearOpenStateData('StateMetaData');
+//TestData('StateMetaData');
 
 //ClearOpenStateData('Legislator');
 //TestData('Legislator');
@@ -980,5 +983,6 @@ TestData('StateMetaData');
 //TestData('ParseDetail');
 //TemporaryFixer()
 
-console.log('done!!');
+//console.log('done!!');
+
 

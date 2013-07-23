@@ -1,5 +1,5 @@
 ﻿
-exports.openstates_api_key = function() {return 'a7b283f866e94ff0a572ec269c76a32e'};
+exports.openstates_api_key = function() {return 'a7b283f866e94ff0a572ec269c76a32e'}; //1fabc7cba69140b99a9b2826f6da45e2
 
 exports.readJson = function RetrieveData(URLJson) {
 try {
@@ -11,7 +11,7 @@ try {
  }
    
  var headersObj = {};
-   
+
  //xhr = new XMLHttpRequest(proxy); // instanciate the xhr object
  xhr = new XMLHttpRequest(); // instanciate the xhr object
     // the proxy parameter may not be necessary
@@ -21,6 +21,7 @@ try {
      if (state !== 4) { // while the status event is not Done we continue
          return;
      }
+
      var headers = this.getAllResponseHeaders(); //get the headers of the response
      var result = this.responseText;  //get the contents of the response
      var headersArray = headers.split('\n'); // split and format the headers string in an array
@@ -43,22 +44,13 @@ try {
              // JSON response, parse it as objects
          resultObj = JSON.parse(result);
      } 
-     else if (['http://thomas.umeme.us/g-v6.txt', 'http://thomas.umeme.us/1-v6.txt', 'http://thomas.umeme.us/2-v6.txt',
-		'http://thomas.umeme.us/2c-v6.txt', 'http://thomas.umeme.us/3-v6.txt', 'http://thomas.umeme.us/4-v6.txt', 
-		'http://thomas.umeme.us/5-v6.txt', 'http://thomas.umeme.us/6-v6.txt', 'http://thomas.umeme.us/7-v6.txt', 
-		'http://thomas.umeme.us/8-v6.txt', 'http://thomas.umeme.us/9-v6.txt', 'http://thomas.umeme.us/10-v6.txt','http://thomas.umeme.us/11-v6.txt',
-		'http://thomas.umeme.us/12-v6.txt', 'http://thomas.umeme.us/13-v6.txt', 'http://thomas.umeme.us/14-v6.txt',
-		'http://thomas.umeme.us/15-v6.txt', 'http://thomas.umeme.us/16-v6.txt', 'http://thomas.umeme.us/17-v6.txt'].indexOf(URLJson)>=0) 
-		{
-     	resultObj = JSON.parse(result);
-     	}
      else
 	 { // not JSON, return text
          resultTxt = result;
      }
  };
-  
- xhr.open('GET', URLJson);  
+
+ xhr.open('GET', URLJson, true);  
  //xhr.open('GET', URLText); // to connect to a Web site
    // or xhr.open('GET', URLJson) to send a REST query to a Wakanda server
    
@@ -79,3 +71,4 @@ catch(error) {
 	console.log(error);
 }
 }
+

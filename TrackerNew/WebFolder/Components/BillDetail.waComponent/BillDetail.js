@@ -11,7 +11,16 @@ function constructor (id) {
 	// @endregion// @endlock
 
 	this.load = function (data) {// @lock
-		alert(data.userData.billID);
+
+		var a;
+		varState = $$('richTextStateName').getValue();
+		varStr= "http://openstates.org/api/v1/bills/" + varState;
+		varStr= varStr + "/" + data.userData.sessionID;
+		varStr= varStr + "/" + data.userData.billID; 
+		varStr= varStr + "/?apikey=" + data.userData.api;
+		$$('componentWebMain_richText1').setValue(varStr);
+		callURL(varStr);
+
 
 	// @region namespaceDeclaration// @startlock
 	// @endregion// @endlock
@@ -22,7 +31,23 @@ function constructor (id) {
 	// @endregion// @endlock
 
 	};// @lock
-
+function callURL(varStr) {
+	 $.ajax(
+	 {
+	 	url:varStr,
+	 	type:"GET",
+	 	dataType:"jsonp",
+	 	async:false,
+	 	success: function(e) {
+	 		debugger;
+			return e;
+	 		},
+	 	error: function() {
+	 		alert('error');
+	 		}
+	 }
+	 );
+	}
 
 }// @startlock
 return constructor;

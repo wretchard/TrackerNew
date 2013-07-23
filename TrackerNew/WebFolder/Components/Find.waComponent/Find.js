@@ -25,11 +25,12 @@ function constructor (id) {
 	dataGridBill.onRowDblClick = function dataGridBill_onRowDblClick (event)// @startlock
 	{// @endlock
 		//debugger;
-		/*var varBillID=sources.componentWebMain_arrBill.bill_id;
+		var varBillID=sources.componentWebMain_arrBill.bill_id;
 		var varsessionID=sources.componentWebMain_arrBill.session;
 		$$('componentWebMain').removeComponent();
 		$$('componentWebMain').loadComponent({path:'/Components/BillDetail.waComponent',
-		userData:{billID:varBillID, sessionID:varsessionID, api:varApi}})*/
+		userData:{billID:varBillID, sessionID:varsessionID, api:varApi}})
+		
 	};// @lock
 
 	buttonStart.click = function buttonStart_click (event)// @startlock
@@ -37,7 +38,6 @@ function constructor (id) {
 		varApi=openStates.openstates_api_key();
 		var stateCookie = getStateCookie('trackerState')
 		var apiString='http://openstates.org/api/v1/bills/?state=' + stateCookie + '&q=' + $$('componentWebMain_textSearch').getValue() + '&apikey=' + varApi
-		//debugger;
 		componentWebMain_varJson = openStates.readJson(apiString)
 		parseBill(componentWebMain_varJson.result)
 	};// @lock
@@ -55,6 +55,22 @@ function parseBill(objJson) {
 	//o={session:'zz', bill_id:'zzz', chamber:'upper', title:'bloop', updated:'july 16, 2013'}
 	sources.componentWebMain_arrBill.sync()
 }
+function callURL(varStr) {
+	 $.ajax(
+	 {
+	 	url:varStr,
+	 	type:"GET",
+	 	dataType:"jsonp",
+	 	async:false,
+	 	success: function(e) {
+			return e;
+	 		},
+	 	error: function() {
+	 		alert('error');
+	 		}
+	 }
+	 );
+	}
 
 getStateCookie =function getCookie(c_name)
 {
