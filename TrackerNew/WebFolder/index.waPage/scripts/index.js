@@ -39,6 +39,7 @@ return c_value;
 	{// @endlock
 		try {
 			$$('componentWebMain').loadComponent('/Components/Find.waComponent');
+			
 	
 	} catch (e) {
 

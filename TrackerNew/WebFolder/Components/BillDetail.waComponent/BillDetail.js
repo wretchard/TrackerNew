@@ -18,16 +18,22 @@ function constructor (id) {
 		varStr= varStr + "/" + data.userData.sessionID;
 		varStr= varStr + "/" + data.userData.billID; 
 		varStr= varStr + "/?apikey=" + data.userData.api;
-		$$('componentWebMain_richText1').setValue(varStr);
 		callURL(varStr);
 
 
 	// @region namespaceDeclaration// @startlock
+	var radioChoice = {};	// @radioGroup
 	// @endregion// @endlock
 
 	// eventHandlers// @lock
 
+	radioChoice.change = function radioChoice_change (event)// @startlock
+	{// @endlock
+		alert(this.getValue());
+	};// @lock
+
 	// @region eventManager// @startlock
+	WAF.addListener(this.id + "_radioChoice", "change", radioChoice.change, "WAF");
 	// @endregion// @endlock
 
 	};// @lock
@@ -37,10 +43,9 @@ function callURL(varStr) {
 	 	url:varStr,
 	 	type:"GET",
 	 	dataType:"jsonp",
-	 	async:false,
+	 	async:true,
 	 	success: function(e) {
-	 		debugger;
-			return e;
+			parseE(e);
 	 		},
 	 	error: function() {
 	 		alert('error');
@@ -48,7 +53,18 @@ function callURL(varStr) {
 	 }
 	 );
 	}
-
+function parseE(e) {
+	objActions=e.actions;
+	componentWebMain_arrActions=[];
+	for (var i=0; i<objActions.length; i++) {
+		componentWebMain_arrActions.push({
+		action:objActions[i].action,
+		actor:objActions[i].actor,
+		date:objActions[i].date
+		});
+	};
+		sources.componentWebMain_arrActions.sync();
+}
 }// @startlock
 return constructor;
 })();// @endlock

@@ -3,17 +3,6 @@
 	Changes to this CSS file might be lost when it is regenerated.
 */
 
-#{id}richText1 {
-	 width: 678px;
-	 height: 35px;
-	 top: 377px;
-	 left: 2px;
-	
-	 position: absolute;
-	 background-color: rgb(255, 255, 255);
-	 
-}
-
 #{id} {
 	 background-color: rgb(224, 224, 224);
 	 
@@ -26,16 +15,7 @@
 	 left: 0px;
 	
 	 position: absolute;
-	 
-}
-
-#{id}dataGridDisplay {
-	 width: 681px;
-	 height: 300px;
-	 top: 30px;
-	 left: 0px;
-	
-	 position: absolute;
+	 background-color: rgb(255, 255, 255);
 	 
 }
 

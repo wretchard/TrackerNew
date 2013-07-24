@@ -13,6 +13,8 @@ function constructor (id) {
 	// @endregion// @endlock
 
 	this.load = function (data) {// @lock
+		
+		componentWebMain_arrBill=[];
 
 	// @region namespaceDeclaration// @startlock
 	var dataGridBill = {};	// @dataGrid
@@ -24,10 +26,10 @@ function constructor (id) {
 	
 	dataGridBill.onRowDblClick = function dataGridBill_onRowDblClick (event)// @startlock
 	{// @endlock
-		//debugger;
 		var varBillID=sources.componentWebMain_arrBill.bill_id;
 		var varsessionID=sources.componentWebMain_arrBill.session;
-		$$('componentWebMain').removeComponent();
+		$$('componentWebMain').removeComponent()
+		//componentWebMain_arrBill=[];
 		$$('componentWebMain').loadComponent({path:'/Components/BillDetail.waComponent',
 		userData:{billID:varBillID, sessionID:varsessionID, api:varApi}})
 		

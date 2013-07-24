@@ -1,14 +1,12 @@
 ﻿<!DOCTYPE html><section data-group="[]">
     <meta name="generator" content="Wakanda GUIDesigner"/>
     <meta name="WAF.catalog" content=""/>
-    <meta name="WAF.config.datasources" data-type="dataSource" data-source-type="array" data-source="{id}arrActions" data-scope="local" data-lib="WAF" data-id="{id}arrActions" data-dataType="string" data-autoLoad="true" content="arrActions"/>
+    <meta name="WAF.config.datasources" data-type="dataSource" data-source-type="array" data-source="{id}arrActions" data-scope="local" data-lib="WAF" data-id="{id}arrActions" data-dataType="string" data-autoLoad="true" data-attributes="action:string,actor:string,date:string" content="arrActions"/>
     <meta name="WAF.config.datasources" data-type="dataSource" data-source-type="scalar" data-source="{id}varJsonDetail" data-scope="local" data-lib="WAF" data-id="{id}varJsonDetail" data-dataType="string" data-autoLoad="true" content="varJsonDetail"/>
-    <meta data-type="dataSource" data-lib="WAF" data-source="{id}arrVotes" data-source-type="array" data-dataType="string" data-autoLoad="true" name="WAF.config.datasources" data-scope="local" data-id="{id}arrVotes" content="arrVotes"/>
-    <meta data-type="dataSource" data-lib="WAF" data-source="{id}arrSponsors" data-source-type="array" data-dataType="string" data-autoLoad="true" name="WAF.config.datasources" data-scope="local" data-id="{id}arrSponsors" content="arrSponsors"/>
+    <meta name="WAF.config.datasources" data-type="dataSource" data-source-type="array" data-source="{id}arrVotes" data-scope="local" data-lib="WAF" data-id="{id}arrVotes" data-dataType="string" data-autoLoad="true" data-attributes="motion:string,yes:object,no:object" content="arrVotes"/>
+    <meta name="WAF.config.datasources" data-type="dataSource" data-source-type="array" data-source="{id}arrSponsors" data-scope="local" data-lib="WAF" data-id="{id}arrSponsors" data-dataType="string" data-autoLoad="true" content="arrSponsors"/>
     
     
     
-    <div id="{id}richText1" data-type="richText" data-target="_blank" data-plainText="true" data-overflow="Hidden" data-lib="WAF" data-label-position="left" data-label="" data-constraint-top="true" data-constraint-left="true" data-autoWidth="false" class="waf-widget waf-richText "></div>
-			<ul id="{id}radioChoice" data-type="radioGroup" data-lib="WAF" class="waf-widget waf-radioGroup " data-display="horizontal" data-label="" data-label-position="left" data-autoDispatch="true" data-constraint-left="true" data-constraint-top="true"><li><input type="radio" value="0" name="radioChoice" id="{id}radioChoice-0"/><label for="{id}radioChoice-0">Actions</label></li><li><input type="radio" value="1" name="radioChoice" id="{id}radioChoice-1"/><label for="{id}radioChoice-1">Sponsors</label></li><li><input type="radio" value="" name="radioChoice" id="{id}radioChoice-2"/><label for="{id}radioChoice-2">Votes</label></li></ul>
-		<div id="{id}dataGridDisplay" data-type="dataGrid" data-lib="WAF" class="waf-widget waf-dataGrid " data-label="" data-label-position="top" data-selection-mode="single" data-display-error="true" data-footer-text="item(s)" data-column="[]" data-constraint-left="true" data-constraint-top="true"></div>
-	</section>
+    <ul id="{id}radioChoice" data-type="radioGroup" data-lib="WAF" data-label-position="left" data-label="" data-display="horizontal" data-constraint-top="true" data-constraint-left="true" data-autoDispatch="true" class="waf-widget waf-radioGroup "><li><input value="action" type="radio" name="radioChoice" id="{id}radioChoice-0"/><label for="{id}radioChoice-0">Actions</label></li><li><input value="sponsor" type="radio" name="radioChoice" id="{id}radioChoice-1"/><label for="{id}radioChoice-1">Sponsors</label></li><li><input value="vote" type="radio" name="radioChoice" id="{id}radioChoice-2"/><label for="{id}radioChoice-2">Votes</label></li></ul>
+			</section>
