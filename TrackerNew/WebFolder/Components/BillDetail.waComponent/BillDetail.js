@@ -25,11 +25,34 @@ function constructor (id) {
 	var radioChoice = {};	// @radioGroup
 	// @endregion// @endlock
 
-	// eventHandlers// @lock
 
+	// eventHandlers// @lock
+	
+	
 	radioChoice.change = function radioChoice_change (event)// @startlock
 	{// @endlock
-		alert(this.getValue());
+		//alert(this.getValue());
+		switch(this.getValue()) {
+		case 'action':
+		//draw('action')
+		break;
+		case 'sponsor':
+		//draw('sponsor')
+		break;
+		case 'vote':
+		//draw('vote')
+		break;
+	}
+			data= {	"status": ["GOOD SERVICE"],
+			"name": ["123"],
+			"url": [null],
+			"text": ["..."],
+			"plannedworkheadline": [null],
+			"Time": [" 7:35AM"],
+			"Date": ["12/15/2011"]}
+		componentWebMain_varJsonDetail=data;
+	//$('#componentWebMain_containerDetail').html('')
+	draw(data);
 	};// @lock
 
 	// @region eventManager// @startlock
@@ -37,6 +60,25 @@ function constructor (id) {
 	// @endregion// @endlock
 
 	};// @lock
+
+function draw(data) {
+	//debugger;
+	"use strict";
+	debugger;
+	d3.select('componentWebMain_containerDetail')
+		.append("ul")
+		.selectAll("li")
+		.data(data)
+		.enter()
+		.append("li")
+		.text(function (d) {
+			  return data.name + ": " + data.status;
+		  });
+
+	
+	
+};
+	
 function callURL(varStr) {
 	 $.ajax(
 	 {

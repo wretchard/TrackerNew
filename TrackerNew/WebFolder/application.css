@@ -3,3 +3,19 @@
 	The CSS styles that are created when you create a Widget Skin are placed in this file too.
 */
 
+.DivToScroll{   
+    background-color: #F5F5F5;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px 0 4px 0;
+    color: #3B3C3E;
+    font-size: 12px;
+    font-weight: bold;
+    left: -1px;
+    padding: 10px 7px 5px;
+}
+
+.DivWithScroll{
+    overflow:scroll;
+    overflow-x:scroll;
+}
+
