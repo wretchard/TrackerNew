@@ -9,7 +9,7 @@
 }
 
 #{id}radioChoice {
-	 width: 300px;
+	 width: 425px;
 	 height: 25px;
 	 top: 0px;
 	 left: 0px;
@@ -21,11 +21,23 @@
 
 #{id}containerDetail {
 	 width: 741px;
-	 height: 672px;
-	 top: 26px;
+	 height: 364px;
+	 top: 280px;
 	 left: 0px;
 	
 	 position: absolute;
+	 
+}
+
+#{id}richTextSummary {
+	 width: 741px;
+	 height: 238px;
+	 top: 29px;
+	 left: 0px;
+	
+	 position: absolute;
+	 background-color: rgb(255, 255, 255);
+	 font-size: 10px;
 	 
 }
 

@@ -31,28 +31,25 @@ function constructor (id) {
 	
 	radioChoice.change = function radioChoice_change (event)// @startlock
 	{// @endlock
-		//alert(this.getValue());
+		$('#componentWebMain_containerDetail').html('')
 		switch(this.getValue()) {
 		case 'action':
-		//draw('action')
+		drawAction(componentWebMain_varJsonDetail.actions);
 		break;
 		case 'sponsor':
-		//draw('sponsor')
+		drawSponsor(componentWebMain_varJsonDetail.sponsors);
 		break;
 		case 'vote':
-		//draw('vote')
+		drawVote(componentWebMain_varJsonDetail.votes);
+		break;
+		case 'yes':
+		drawYes(componentWebMain_varJsonDetail.votes);
+		break;
+		case 'no':
+		drawNo(componentWebMain_varJsonDetail.votes);
 		break;
 	}
-			data= {	"status": ["GOOD SERVICE"],
-			"name": ["123"],
-			"url": [null],
-			"text": ["..."],
-			"plannedworkheadline": [null],
-			"Time": [" 7:35AM"],
-			"Date": ["12/15/2011"]}
-		componentWebMain_varJsonDetail=data;
-	//$('#componentWebMain_containerDetail').html('')
-	draw(data);
+
 	};// @lock
 
 	// @region eventManager// @startlock
@@ -61,22 +58,83 @@ function constructor (id) {
 
 	};// @lock
 
-function draw(data) {
-	//debugger;
+function drawAction(data) {
 	"use strict";
-	debugger;
-	d3.select('componentWebMain_containerDetail')
-		.append("ul")
-		.selectAll("li")
-		.data(data)
-		.enter()
-		.append("li")
-		.text(function (d) {
-			  return data.name + ": " + data.status;
-		  });
+	//debugger;
+		d3.select('#componentWebMain_containerDetail')
+			.append("ul")
+			.selectAll("li")
+			.data(data)
+			.enter()
+			.append("li")
+			.text(function (d) {
+				  return d.date + ", " + d.actor + ", " + d.action
+			  });
 
 	
 	
+};
+
+function drawSponsor(data) {
+	"use strict";
+	//debugger;
+		d3.select('#componentWebMain_containerDetail')
+			.append("ul")
+			.selectAll("li")
+			.data(data)
+			.enter()
+			.append("li")
+			.text(function (d) {
+				  return d.leg_id + ", " + d.name + ", " + d.official_type;
+			  });
+
+	
+	
+};
+
+function drawVote(data) {
+	"use strict";
+	//debugger;
+		d3.select('#componentWebMain_containerDetail')
+			.append("ul")
+			.selectAll("li")
+			.data(data)
+			.enter()
+			.append("li")
+			.text(function (d) {
+				  return d.date + ", "  + d.chamber + ", " + d.motion + ", " + ", no count: " + d.no_count + ", yes count:" + d.yes_count;
+			  });
+
+	
+	
+};
+
+function drawYes(data) {
+	"use strict";
+	//debugger;
+		d3.select('#componentWebMain_containerDetail')
+			.append("ul")
+			.selectAll("li")
+			.data(data)
+			.enter()
+			.append("li")
+			.text(function (d) {
+				  return "to be implemented"
+			  });	
+};
+
+function drawNo(data) {
+	"use strict";
+	//debugger;
+		d3.select('#componentWebMain_containerDetail')
+			.append("ul")
+			.selectAll("li")
+			.data(data)
+			.enter()
+			.append("li")
+			.text(function (d) {
+				  return "to be implemented"
+			  });	
 };
 	
 function callURL(varStr) {
@@ -88,6 +146,8 @@ function callURL(varStr) {
 	 	async:true,
 	 	success: function(e) {
 			parseE(e);
+			componentWebMain_varJsonDetail=e;
+			$('#componentWebMain_richTextSummary').html(componentWebMain_varJsonDetail.summary)
 	 		},
 	 	error: function() {
 	 		alert('error');
@@ -95,6 +155,7 @@ function callURL(varStr) {
 	 }
 	 );
 	}
+	
 function parseE(e) {
 	objActions=e.actions;
 	componentWebMain_arrActions=[];

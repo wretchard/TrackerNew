@@ -5,9 +5,11 @@
     <meta name="WAF.config.datasources" data-type="dataSource" data-source-type="array" data-source="{id}arrBill" data-scope="local" data-lib="WAF" data-id="{id}arrBill" data-dataType="string" data-autoLoad="true" data-attributes="session:string,bill_id:string,title:string,chamber:string,updated:string" content="arrBill"/>
     
     
+    
     <input type="text" id="{id}textSearch" data-type="textField" data-readOnly="false" data-password="false" data-multiline="false" data-lib="WAF" data-label-position="left" data-label="Search" data-datapicker-on="false" data-datapicker-icon-only="false" data-constraint-top="true" data-constraint-left="true" class="waf-widget waf-textField "/>
 		<button id="{id}buttonStart" data-type="button" data-text="Start Search" data-target="_blank" data-lib="WAF" data-constraint-top="true" data-constraint-left="true" data-action="simple" class="waf-widget waf-button "></button>
 			<div id="{id}dataGridBill" data-type="dataGrid" data-selection-mode="single" data-readOnly="true" data-lib="WAF" data-label-position="top" data-label="" data-footer-text="item(s)" data-footer-hide="false" data-display-error="true" data-constraint-top="true" data-constraint-left="true" data-column="[{'sourceAttID':'session','colID':'session','width':'104','title':'Session'},{'sourceAttID':'bill_id','colID':'bill_id','width':'96','title':'Bill'},{'sourceAttID':'chamber','colID':'chamber','width':'80','title':'Chamber'},{'sourceAttID':'title','colID':'title','width':'410','title':'Title'}]" data-binding="{id}arrBill" class="waf-widget waf-dataGrid "></div>
 	
 		<label id="{id}label2" for="{id}textSearch" data-valign="middle" data-type="label" data-margin="5" data-lib="WAF" data-constraint-top="true" data-constraint-left="true" class="waf-widget waf-label waf-label-textField">Search</label>
+		<div id="{id}richText1" data-type="richText" data-lib="WAF" class="waf-widget waf-richText " data-autoWidth="false" data-label="" data-label-position="left" data-target="_blank" data-overflow="Hidden" data-plainText="true" data-constraint-left="true" data-constraint-top="true">Double-click result to view detail</div>
 	</section>
