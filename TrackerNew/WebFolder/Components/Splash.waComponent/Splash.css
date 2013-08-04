@@ -3,6 +3,39 @@
 	Changes to this CSS file might be lost when it is regenerated.
 */
 
+#{id}richText2 {
+	 z-index: 1;
+	 width: 231px;
+	 height: 53px;
+	 top: 385px;
+	 left: 74px;
+	
+	 position: absolute;
+	 z-index: 1;
+	 text-align: center;
+	 background-color: transparent;
+	 font-weight: normal;
+	 font-size: 12px;
+	 
+}
+
+#{id}richText1 {
+	 z-index: 1;
+	 width: 316px;
+	 height: 29px;
+	 top: 362px;
+	 left: 29px;
+	
+	 position: absolute;
+	 font-weight: bold;
+	 z-index: 1;
+	 text-align: center;
+	 font-size: 16px;
+	 background-color: transparent;
+	 color: rgb(0, 0, 255);
+	 
+}
+
 #{id} {
 	 background-color: rgb(255, 255, 255);
 	 
@@ -29,7 +62,8 @@
 	 position: absolute;
 	 font-size: 36px;
 	 font-weight: bold;
-	 background-color: rgb(255, 255, 255);
+	 background-color: transparent;
+	 color: rgb(255, 0, 0);
 	 
 }
 

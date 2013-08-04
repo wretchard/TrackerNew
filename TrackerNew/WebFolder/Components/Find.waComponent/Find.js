@@ -24,6 +24,7 @@ function constructor (id) {
 		})
 		
 		componentWebMain_arrBill=[];
+		sources.componentWebMain_arrBill.sync()
 
 	// @region namespaceDeclaration// @startlock
 	var textSearch = {};	// @textField

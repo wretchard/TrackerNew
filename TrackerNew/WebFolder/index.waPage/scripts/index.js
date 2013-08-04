@@ -4,6 +4,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 
 // @region namespaceDeclaration// @startlock
+	var documentEvent = {};	// @document
+	var menuItemUserCustom = {};	// @menuItem
 	var menuItemFind = {};	// @menuItem
 	var menuItemState = {};	// @menuItem
 	var componentWebMain = {};	// @component
@@ -35,6 +37,24 @@ return c_value;
 
 // eventHandlers// @lock
 
+	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
+	{// @endlock
+		setTimeout(function(){setupPage()},1500);
+
+	};// @lock
+
+	menuItemUserCustom.click = function menuItemUserCustom_click (event)// @startlock
+	{// @endlock
+		try {
+			//debugger;
+			//$$('componentWebMain').loadComponent('/Components/User.waComponent');
+			
+	
+		} catch (e) {
+
+		}
+	};// @lock
+
 	menuItemFind.click = function menuItemFind_click (event)// @startlock
 	{// @endlock
 		try {
@@ -61,6 +81,25 @@ return c_value;
 	componentWebMain.click = function componentWebMain_click (event)// @startlock
 	{// @endlock
 		try {
+		setupPage()
+		} catch (e) {
+		console.log(e.message);
+		}
+
+	};// @lock
+	
+
+
+// @region eventManager// @startlock
+	WAF.addListener("document", "onLoad", documentEvent.onLoad, "WAF");
+	WAF.addListener("menuItemUserCustom", "click", menuItemUserCustom.click, "WAF");
+	WAF.addListener("menuItemFind", "click", menuItemFind.click, "WAF");
+	WAF.addListener("menuItemState", "click", menuItemState.click, "WAF");
+	WAF.addListener("componentWebMain", "click", componentWebMain.click, "WAF");
+// @endregion
+};// @endlock
+
+	function setupPage() {
 		stateName=getState('trackerState')
 		if (stateName !==null) {
 			stateName=stateName.toUpperCase();
@@ -68,17 +107,6 @@ return c_value;
 		$$('richTextStateName').setValue(stateName)			
 		if ($$('componentWebMain').config['data-path']=="/Components/Splash.waComponent") {
 		$$('componentWebMain').removeComponent();
-		$$('menuBarWebMain').show()		
+		$$('menuBarWebMain').show()			
 		}
-	} catch (e) {
-		console.log(e.message);
 	}
-
-	};// @lock
-
-// @region eventManager// @startlock
-	WAF.addListener("menuItemFind", "click", menuItemFind.click, "WAF");
-	WAF.addListener("menuItemState", "click", menuItemState.click, "WAF");
-	WAF.addListener("componentWebMain", "click", componentWebMain.click, "WAF");
-// @endregion
-};// @endlock
