@@ -6,7 +6,7 @@
 #{id}richText1 {
 	 width: 200px;
 	 height: 16px;
-	 top: 5px;
+	 top: 7px;
 	 left: 298px;
 	
 	 position: absolute;
@@ -17,7 +17,7 @@
 	 width: 39px;
 	 height: 15px;
 	 top: 8.5px;
-	 left: 21px;
+	 left: 29px;
 	
 	 position: absolute;
 	 
@@ -29,10 +29,10 @@
 }
 
 #{id}textSearch {
-	 width: 130px;
+	 width: 122px;
 	 height: 22px;
 	 top: 5px;
-	 left: 65px;
+	 left: 73px;
 	
 	 position: absolute;
 	 

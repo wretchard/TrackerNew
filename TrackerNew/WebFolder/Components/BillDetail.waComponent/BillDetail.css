@@ -3,13 +3,23 @@
 	Changes to this CSS file might be lost when it is regenerated.
 */
 
+#{id}richText2 {
+	 width: 300px;
+	 height: 18px;
+	 top: 4px;
+	 left: 323px;
+	
+	 position: absolute;
+	 
+}
+
 #{id} {
 	 background-color: rgb(224, 224, 224);
 	 
 }
 
 #{id}radioChoice {
-	 width: 425px;
+	 width: 315px;
 	 height: 25px;
 	 top: 0px;
 	 left: 0px;
@@ -20,7 +30,7 @@
 }
 
 #{id}containerDetail {
-	 width: 741px;
+	 width: 743px;
 	 height: 364px;
 	 top: 280px;
 	 left: 0px;

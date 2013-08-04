@@ -11,7 +11,6 @@ function constructor (id) {
 	// @endregion// @endlock
 
 	this.load = function (data) {// @lock
-
 		var a;
 		varState = $$('richTextStateName').getValue();
 		varStr= "http://openstates.org/api/v1/bills/" + varState;
@@ -31,6 +30,7 @@ function constructor (id) {
 	
 	radioChoice.change = function radioChoice_change (event)// @startlock
 	{// @endlock
+
 		$('#componentWebMain_containerDetail').html('')
 		switch(this.getValue()) {
 		case 'action':
@@ -42,13 +42,7 @@ function constructor (id) {
 		case 'vote':
 		drawVote(componentWebMain_varJsonDetail.votes);
 		break;
-		case 'yes':
-		drawYes(componentWebMain_varJsonDetail.votes);
-		break;
-		case 'no':
-		drawNo(componentWebMain_varJsonDetail.votes);
-		break;
-	}
+		}
 
 	};// @lock
 
@@ -63,13 +57,15 @@ function drawAction(data) {
 	//debugger;
 		d3.select('#componentWebMain_containerDetail')
 			.append("ul")
+			.attr('id', 'Action')					
 			.selectAll("li")
 			.data(data)
 			.enter()
 			.append("li")
 			.text(function (d) {
-				  return d.date + ", " + d.actor + ", " + d.action
+				 return String.fromCharCode(8226) + " " + d.date + ", " + d.actor + ", " + d.action
 			  });
+		$('#Action').before("<p class='Title'>Actions Taken</p>")
 
 	
 	
@@ -77,17 +73,17 @@ function drawAction(data) {
 
 function drawSponsor(data) {
 	"use strict";
-	//debugger;
 		d3.select('#componentWebMain_containerDetail')
 			.append("ul")
+			.attr('id', 'Action')
 			.selectAll("li")
 			.data(data)
 			.enter()
 			.append("li")
 			.text(function (d) {
-				  return d.leg_id + ", " + d.name + ", " + d.official_type;
+				  return String.fromCharCode(8226) + " " + d.leg_id + ", " + d.name + ", " + d.official_type;
 			  });
-
+		$('#Action').before("<p class='Title'>Sponsors</p>")
 	
 	
 };
@@ -97,44 +93,61 @@ function drawVote(data) {
 	//debugger;
 		d3.select('#componentWebMain_containerDetail')
 			.append("ul")
+			.attr('id', 'Action')			
 			.selectAll("li")
 			.data(data)
 			.enter()
 			.append("li")
 			.text(function (d) {
-				  return d.date + ", "  + d.chamber + ", " + d.motion + ", " + ", no count: " + d.no_count + ", yes count:" + d.yes_count;
-			  });
-
-	
-	
+				  return String.fromCharCode(8226) + " " + d.id + ", " + d.date + ", "  + d.chamber + ", " + d.motion.replace(/,/g, '') + ", no count: " + d.no_count + ", yes count:" + d.yes_count;
+			  })	
+			 .on('click', findElectionID);
+		$('#Action').before("<p class='Title'>Votes</p>")			 	
 };
 
-function drawYes(data) {
-	"use strict";
-	//debugger;
+function findElectionID() {
+	b=(this.textContent).split(",");
+	var subj=b[3];
+	b=b[0].split(" ");
+	b=b[1];
+	for (var i=0; i<componentWebMain_varJsonDetail.votes.length; i++) {
+		if (componentWebMain_varJsonDetail.votes[i].id == b) {
+			drawYes(componentWebMain_varJsonDetail.votes[i].yes_votes, subj, function() {drawNo(componentWebMain_varJsonDetail.votes[i].no_votes)});
+			
+		}
+	}
+	
+}
+
+function drawYes(data, subj, callback) {
+		"use strict";
+		$('#componentWebMain_containerDetail').html('');
 		d3.select('#componentWebMain_containerDetail')
 			.append("ul")
+			.attr('id', 'Action')
 			.selectAll("li")
 			.data(data)
 			.enter()
 			.append("li")
 			.text(function (d) {
-				  return "to be implemented"
-			  });	
+				  return String.fromCharCode(8226) + " " + d.leg_id + ", " + d.name 
+			  })
+		$('#Action').before("<p class='Title'>Voted Yes to '" + subj + "'</p>")	
+		callback();
 };
 
 function drawNo(data) {
 	"use strict";
-	//debugger;
-		d3.select('#componentWebMain_containerDetail')
-			.append("ul")
-			.selectAll("li")
-			.data(data)
-			.enter()
-			.append("li")
-			.text(function (d) {
-				  return "to be implemented"
-			  });	
+	$('#componentWebMain_containerDetail').append("<p class='Title'>Voted No</p>")
+	$('#componentWebMain_containerDetail').append("<ul id='no'></ul>")
+	d3.select('#no')
+		.selectAll("li")
+		.data(data)
+		.enter()
+		.append("li")
+		.text(function (d) {
+			  return String.fromCharCode(8226) + " " + d.leg_id + ", " + d.name 
+		  });	
 };
 	
 function callURL(varStr) {

@@ -14,37 +14,80 @@ function constructor (id) {
 
 	this.load = function (data) {// @lock
 		
+		$('#componentWebMain_dataGridBill').hover(
+		function() {
+			$('#componentWebMain_richText1').show();
+		},
+		
+		function() {
+			$('#componentWebMain_richText1').hide();
+		})
+		
 		componentWebMain_arrBill=[];
 
 	// @region namespaceDeclaration// @startlock
+	var textSearch = {};	// @textField
 	var dataGridBill = {};	// @dataGrid
 	var buttonStart = {};	// @button
 	// @endregion// @endlock
 
 	// eventHandlers// @lock
+
+	textSearch.keydown = function textSearch_keydown (event)// @startlock
+	{// @endlock
+
+		if(event.keyCode == 13)
+		{
+    		searchClick();
+		}
+
+	};// @lock
 	var varApi;
 	
-	dataGridBill.onRowDblClick = function dataGridBill_onRowDblClick (event)// @startlock
+	dataGridBill.onRowClick = function dataGridBill_onRowClick (event)// @startlock
 	{// @endlock
+		rowClickCustom();
+	};// @lock
+	
+	function rowClickCustom() {
 		var varBillID=sources.componentWebMain_arrBill.bill_id;
 		var varsessionID=sources.componentWebMain_arrBill.session;
 		$$('componentWebMain').removeComponent()
-		//componentWebMain_arrBill=[];
 		$$('componentWebMain').loadComponent({path:'/Components/BillDetail.waComponent',
-		userData:{billID:varBillID, sessionID:varsessionID, api:varApi}})
-		
-	};// @lock
+		userData:{billID:varBillID, sessionID:varsessionID, api:varApi}})		
+	}
 
 	buttonStart.click = function buttonStart_click (event)// @startlock
 	{// @endlock
+		searchClick();
+	};// @lock
+	
+	function searchClick () {
 		varApi=openStates.openstates_api_key();
 		var stateCookie = getStateCookie('trackerState')
 		var apiString='http://openstates.org/api/v1/bills/?state=' + stateCookie + '&q=' + $$('componentWebMain_textSearch').getValue() + '&apikey=' + varApi
-		componentWebMain_varJson = openStates.readJson(apiString)
-		parseBill(componentWebMain_varJson.result)
-	};// @lock
+		callURL(apiString);		
+	}
+	
+function callURL(varStr) {
+	 $.ajax(
+	 {
+	 	url:varStr,
+	 	type:"GET",
+	 	dataType:"jsonp",
+	 	async:true,
+	 	success: function(e) {
+	 		parseBill(e);
+	 		},
+	 	error: function() {
+	 		alert('error');
+	 		}
+	 }
+	 );
+	}
 	
 function parseBill(objJson) {
+	//debugger;
 	componentWebMain_arrBill=[];
 	for (var i=0; i<objJson.length; i++) {
 		varBill=objJson[i];
@@ -54,25 +97,8 @@ function parseBill(objJson) {
 		title:varBill.title, 
 		updated:varBill.session.updated});
 	};
-	//o={session:'zz', bill_id:'zzz', chamber:'upper', title:'bloop', updated:'july 16, 2013'}
 	sources.componentWebMain_arrBill.sync()
 }
-function callURL(varStr) {
-	 $.ajax(
-	 {
-	 	url:varStr,
-	 	type:"GET",
-	 	dataType:"jsonp",
-	 	async:false,
-	 	success: function(e) {
-			return e;
-	 		},
-	 	error: function() {
-	 		alert('error');
-	 		}
-	 }
-	 );
-	}
 
 getStateCookie =function getCookie(c_name)
 {
@@ -99,7 +125,8 @@ c_value = unescape(c_value.substring(c_start,c_end));
 return c_value;
 }
 	// @region eventManager// @startlock
-	WAF.addListener(this.id + "_dataGridBill", "onRowDblClick", dataGridBill.onRowDblClick, "WAF");
+	WAF.addListener(this.id + "_textSearch", "keydown", textSearch.keydown, "WAF");
+	WAF.addListener(this.id + "_dataGridBill", "onRowClick", dataGridBill.onRowClick, "WAF");
 	WAF.addListener(this.id + "_buttonStart", "click", buttonStart.click, "WAF");
 	// @endregion// @endlock
 

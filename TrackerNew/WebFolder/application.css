@@ -19,3 +19,30 @@
     overflow-x:scroll;
 }
 
+#Action {
+	font-size:10px;
+	font-family:"Droid Sans";
+	
+}
+
+#no {
+	font-size:10px;
+	font-family:"Droid Sans";
+	
+}
+
+.Title {
+	font-weight: bold;
+	text-align: center;
+	
+	}
+}
+
+.SecondLevel {
+	margin: 15px;
+}
+
+.ThirdLevel {
+	margin: 30px;
+}
+

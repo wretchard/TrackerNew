@@ -1135,3 +1135,117 @@
 2013-07-31 17:21:36 [com.wakanda-software.TrackerNew.TrackerNew] INFO - "TrackerNew" project closed
 2013-07-31 17:21:36 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - "ServerAdmin" project closed
 2013-07-31 17:21:36 [com.wakanda-software.TrackerNew] INFO - "TrackerNew" solution closed
+2013-08-01 04:20:35 [com.wakanda-software.TrackerNew] INFO - Users and groups directory opened
+2013-08-01 04:20:35 [com.wakanda-software.TrackerNew.TrackerNew] INFO - Datastore opened
+2013-08-01 04:20:35 [com.wakanda-software.TrackerNew.TrackerNew] INFO - "TrackerNew" project opened
+2013-08-01 04:20:35 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - "ServerAdmin" project opened
+2013-08-01 04:20:35 [com.wakanda-software.TrackerNew] INFO - "TrackerNew" solution opened
+2013-08-01 04:20:35 [com.wakanda-software] INFO - Starts "TrackerNew" solution
+2013-08-01 04:20:36 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - HTTP Server started
+2013-08-01 04:20:36 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - "ServerAdmin" project started
+2013-08-01 04:20:36 [com.wakanda-software.TrackerNew.TrackerNew] INFO - HTTP Server started
+2013-08-01 04:20:36 [com.wakanda-software.TrackerNew.TrackerNew] INFO - "TrackerNew" project started
+2013-08-01 04:20:36 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - Executes the bootstrap file(s)
+2013-08-01 04:20:36 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - Bootstrap file(s) executed
+2013-08-01 04:20:36 [com.wakanda-software.TrackerNew.TrackerNew] INFO - Executes the bootstrap file(s)
+2013-08-01 04:20:36 [com.wakanda-software.TrackerNew.TrackerNew] INFO - Bootstrap file(s) executed
+2013-08-01 04:20:36 [com.wakanda-software.TrackerNew] INFO - "TrackerNew" solution started
+2013-08-01 04:20:36 [com.wakanda-software] INFO - "TrackerNew" solution has been successfully opened for running (duration: 400 ms)
+2013-08-03 10:31:24 [com.wakanda-software.TrackerNew] INFO - Users and groups directory opened
+2013-08-03 10:31:24 [com.wakanda-software.TrackerNew.TrackerNew] INFO - Datastore opened
+2013-08-03 10:31:24 [com.wakanda-software.TrackerNew.TrackerNew] INFO - "TrackerNew" project opened
+2013-08-03 10:31:24 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - "ServerAdmin" project opened
+2013-08-03 10:31:24 [com.wakanda-software.TrackerNew] INFO - "TrackerNew" solution opened
+2013-08-03 10:31:24 [com.wakanda-software] INFO - Starts "TrackerNew" solution
+2013-08-03 10:31:25 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - HTTP Server started
+2013-08-03 10:31:25 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - "ServerAdmin" project started
+2013-08-03 10:31:25 [com.wakanda-software.TrackerNew.TrackerNew] INFO - HTTP Server started
+2013-08-03 10:31:25 [com.wakanda-software.TrackerNew.TrackerNew] INFO - "TrackerNew" project started
+2013-08-03 10:31:25 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - Executes the bootstrap file(s)
+2013-08-03 10:31:25 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - Bootstrap file(s) executed
+2013-08-03 10:31:25 [com.wakanda-software.TrackerNew.TrackerNew] INFO - Executes the bootstrap file(s)
+2013-08-03 10:31:25 [com.wakanda-software.TrackerNew.TrackerNew] INFO - Bootstrap file(s) executed
+2013-08-03 10:31:25 [com.wakanda-software.TrackerNew] INFO - "TrackerNew" solution started
+2013-08-03 10:31:25 [com.wakanda-software] INFO - "TrackerNew" solution has been successfully opened for running (duration: 958 ms)
+2013-08-03 20:21:08 [com.wakanda-software] INFO - Stops "TrackerNew" solution
+2013-08-03 20:21:09 [com.wakanda-software.TrackerNew.TrackerNew] INFO - "TrackerNew" project stopped
+2013-08-03 20:21:11 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - "ServerAdmin" project stopped
+2013-08-03 20:21:11 [com.wakanda-software.TrackerNew] INFO - "TrackerNew" solution stopped
+2013-08-03 20:21:11 [com.wakanda-software] INFO - Closes "TrackerNew" solution
+2013-08-03 20:21:11 [com.wakanda-software.TrackerNew.TrackerNew] INFO - "TrackerNew" project closed
+2013-08-03 20:21:11 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - "ServerAdmin" project closed
+2013-08-03 20:21:11 [com.wakanda-software.TrackerNew] INFO - "TrackerNew" solution closed
+2013-08-04 08:14:38 [com.wakanda-software] INFO - Opens the solution "C:\Users\dse\Documents\Wakanda\TrackerNew\TrackerNew Solution\TrackerNew.waSolution" for running
+2013-08-04 08:14:39 [com.wakanda-software.TrackerNew] INFO - Users and groups directory opened
+2013-08-04 08:14:39 [com.wakanda-software.TrackerNew.TrackerNew] INFO - Datastore opened
+2013-08-04 08:14:39 [com.wakanda-software.TrackerNew.TrackerNew] INFO - "TrackerNew" project opened
+2013-08-04 08:14:39 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - "ServerAdmin" project opened
+2013-08-04 08:14:39 [com.wakanda-software.TrackerNew] INFO - "TrackerNew" solution opened
+2013-08-04 08:14:39 [com.wakanda-software] INFO - Starts "TrackerNew" solution
+2013-08-04 08:14:39 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - HTTP Server started
+2013-08-04 08:14:39 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - "ServerAdmin" project started
+2013-08-04 08:14:40 [com.wakanda-software.TrackerNew.TrackerNew] INFO - HTTP Server started
+2013-08-04 08:14:40 [com.wakanda-software.TrackerNew.TrackerNew] INFO - "TrackerNew" project started
+2013-08-04 08:14:40 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - Executes the bootstrap file(s)
+2013-08-04 08:14:40 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - Bootstrap file(s) executed
+2013-08-04 08:14:40 [com.wakanda-software.TrackerNew.TrackerNew] INFO - Executes the bootstrap file(s)
+2013-08-04 08:14:40 [com.wakanda-software.TrackerNew.TrackerNew] INFO - Bootstrap file(s) executed
+2013-08-04 08:14:40 [com.wakanda-software.TrackerNew] INFO - "TrackerNew" solution started
+2013-08-04 08:14:40 [com.wakanda-software] INFO - "TrackerNew" solution has been successfully opened for running (duration: 1112 ms)
+2013-08-04 14:16:59 [com.wakanda-software.TrackerNew] INFO - Users and groups directory opened
+2013-08-04 14:16:59 [com.wakanda-software.TrackerNew.TrackerNew] INFO - Datastore opened
+2013-08-04 14:16:59 [com.wakanda-software.TrackerNew.TrackerNew] INFO - "TrackerNew" project opened
+2013-08-04 14:16:59 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - "ServerAdmin" project opened
+2013-08-04 14:16:59 [com.wakanda-software.TrackerNew] INFO - "TrackerNew" solution opened
+2013-08-04 14:16:59 [com.wakanda-software] INFO - Starts "TrackerNew" solution
+2013-08-04 14:17:00 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - HTTP Server started
+2013-08-04 14:17:00 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - "ServerAdmin" project started
+2013-08-04 14:17:00 [com.wakanda-software.TrackerNew.TrackerNew] INFO - HTTP Server started
+2013-08-04 14:17:00 [com.wakanda-software.TrackerNew.TrackerNew] INFO - "TrackerNew" project started
+2013-08-04 14:17:00 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - Executes the bootstrap file(s)
+2013-08-04 14:17:00 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - Bootstrap file(s) executed
+2013-08-04 14:17:00 [com.wakanda-software.TrackerNew.TrackerNew] INFO - Executes the bootstrap file(s)
+2013-08-04 14:17:00 [com.wakanda-software.TrackerNew.TrackerNew] INFO - Bootstrap file(s) executed
+2013-08-04 14:17:00 [com.wakanda-software.TrackerNew] INFO - "TrackerNew" solution started
+2013-08-04 14:17:00 [com.wakanda-software] INFO - "TrackerNew" solution has been successfully opened for running (duration: 1295 ms)
+2013-08-04 15:59:25 [com.wakanda-software] INFO - Stops "TrackerNew" solution
+2013-08-04 15:59:25 [com.wakanda-software.srvr] ERROR - [42] SSL read failed, task #5532, task name is Reused spare process
+2013-08-04 15:59:25 [com.wakanda-software.srvr] ERROR - [1] Read failed, task #5532, task name is Reused spare process
+2013-08-04 15:59:27 [com.wakanda-software.TrackerNew.TrackerNew] INFO - "TrackerNew" project stopped
+2013-08-04 15:59:28 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - "ServerAdmin" project stopped
+2013-08-04 15:59:28 [com.wakanda-software.TrackerNew] INFO - "TrackerNew" solution stopped
+2013-08-04 15:59:28 [com.wakanda-software] INFO - Closes "TrackerNew" solution
+2013-08-04 15:59:28 [com.wakanda-software.TrackerNew.TrackerNew] INFO - "TrackerNew" project closed
+2013-08-04 15:59:28 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - "ServerAdmin" project closed
+2013-08-04 15:59:28 [com.wakanda-software.TrackerNew] INFO - "TrackerNew" solution closed
+2013-08-04 16:02:24 [com.wakanda-software] INFO - Opens the solution "C:\Users\dse\Documents\Wakanda\TrackerNew\TrackerNew Solution\TrackerNew.waSolution" for running
+2013-08-04 16:02:25 [com.wakanda-software.TrackerNew] INFO - Users and groups directory opened
+2013-08-04 16:02:25 [com.wakanda-software.TrackerNew.TrackerNew] INFO - Datastore opened
+2013-08-04 16:02:25 [com.wakanda-software.TrackerNew.TrackerNew] INFO - "TrackerNew" project opened
+2013-08-04 16:02:25 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - "ServerAdmin" project opened
+2013-08-04 16:02:25 [com.wakanda-software.TrackerNew] INFO - "TrackerNew" solution opened
+2013-08-04 16:02:25 [com.wakanda-software] INFO - Starts "TrackerNew" solution
+2013-08-04 16:02:25 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - HTTP Server started
+2013-08-04 16:02:25 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - "ServerAdmin" project started
+2013-08-04 16:02:26 [com.wakanda-software.TrackerNew.TrackerNew] INFO - HTTP Server started
+2013-08-04 16:02:26 [com.wakanda-software.TrackerNew.TrackerNew] INFO - "TrackerNew" project started
+2013-08-04 16:02:26 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - Executes the bootstrap file(s)
+2013-08-04 16:02:26 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - Bootstrap file(s) executed
+2013-08-04 16:02:26 [com.wakanda-software.TrackerNew.TrackerNew] INFO - Executes the bootstrap file(s)
+2013-08-04 16:02:26 [com.wakanda-software.TrackerNew.TrackerNew] INFO - Bootstrap file(s) executed
+2013-08-04 16:02:26 [com.wakanda-software.TrackerNew] INFO - "TrackerNew" solution started
+2013-08-04 16:02:26 [com.wakanda-software] INFO - "TrackerNew" solution has been successfully opened for running (duration: 1393 ms)
+2013-08-04 18:35:05 [com.wakanda-software.xbox] ERROR - [601] The process cannot access the file because it is being used by another process.
+, task #9392, task name is HTTP Server Log Flush
+2013-08-04 18:35:05 [com.wakanda-software.xbox] ERROR - [601] The process cannot access the file because it is being used by another process.
+, task #9392, task name is HTTP Server Log Flush
+2013-08-04 18:35:05 [com.wakanda-software.xbox] ERROR - [601] The process cannot access the file because it is being used by another process.
+, task #9392, task name is HTTP Server Log Flush
+2013-08-04 18:43:31 [com.wakanda-software] INFO - Stops "TrackerNew" solution
+2013-08-04 18:43:32 [com.wakanda-software.TrackerNew.TrackerNew] INFO - "TrackerNew" project stopped
+2013-08-04 18:43:33 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - "ServerAdmin" project stopped
+2013-08-04 18:43:33 [com.wakanda-software.TrackerNew] INFO - "TrackerNew" solution stopped
+2013-08-04 18:43:33 [com.wakanda-software] INFO - Closes "TrackerNew" solution
+2013-08-04 18:43:33 [com.wakanda-software.TrackerNew.TrackerNew] INFO - "TrackerNew" project closed
+2013-08-04 18:43:33 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - "ServerAdmin" project closed
+2013-08-04 18:43:34 [com.wakanda-software.TrackerNew] INFO - "TrackerNew" solution closed
