@@ -54,7 +54,6 @@ function constructor (id) {
 
 function drawAction(data) {
 	"use strict";
-	//debugger;
 		d3.select('#componentWebMain_containerDetail')
 			.append("ul")
 			.attr('id', 'Action')					
@@ -158,9 +157,14 @@ function callURL(varStr) {
 	 	dataType:"jsonp",
 	 	async:true,
 	 	success: function(e) {
-			parseE(e);
+			//parseE(e);
 			componentWebMain_varJsonDetail=e;
+			if (componentWebMain_varJsonDetail.summary !==undefined) {			
 			$('#componentWebMain_richTextSummary').html(componentWebMain_varJsonDetail.summary)
+			}
+			else {
+			$('#componentWebMain_richTextSummary').html(componentWebMain_varJsonDetail.title)
+			}
 	 		},
 	 	error: function() {
 	 		alert('error');

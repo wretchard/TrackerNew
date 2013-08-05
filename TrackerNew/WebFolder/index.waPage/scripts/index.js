@@ -39,7 +39,7 @@ return c_value;
 
 	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
 	{// @endlock
-		setTimeout(function(){setupPage()},1500);
+		setTimeout(function(){setupPage()},5000);
 
 	};// @lock
 
