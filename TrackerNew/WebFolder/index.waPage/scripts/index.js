@@ -4,8 +4,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 
 // @region namespaceDeclaration// @startlock
+	var menuItemAbout = {};	// @menuItem
 	var documentEvent = {};	// @document
-	var menuItemUserCustom = {};	// @menuItem
 	var menuItemFind = {};	// @menuItem
 	var menuItemState = {};	// @menuItem
 	var componentWebMain = {};	// @component
@@ -37,22 +37,20 @@ return c_value;
 
 // eventHandlers// @lock
 
-	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
-	{// @endlock
-		setTimeout(function(){setupPage()},5000);
-
-	};// @lock
-
-	menuItemUserCustom.click = function menuItemUserCustom_click (event)// @startlock
+	menuItemAbout.click = function menuItemAbout_click (event)// @startlock
 	{// @endlock
 		try {
-			//debugger;
-			//$$('componentWebMain').loadComponent('/Components/User.waComponent');
-			
+			$$('componentWebMain').loadComponent('/Components/Splash.waComponent');
 	
 		} catch (e) {
 
 		}
+	};// @lock
+
+	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
+	{// @endlock
+		setTimeout(function(){setupPage()},5000);
+
 	};// @lock
 
 	menuItemFind.click = function menuItemFind_click (event)// @startlock
@@ -91,8 +89,8 @@ return c_value;
 
 
 // @region eventManager// @startlock
+	WAF.addListener("menuItemAbout", "click", menuItemAbout.click, "WAF");
 	WAF.addListener("document", "onLoad", documentEvent.onLoad, "WAF");
-	WAF.addListener("menuItemUserCustom", "click", menuItemUserCustom.click, "WAF");
 	WAF.addListener("menuItemFind", "click", menuItemFind.click, "WAF");
 	WAF.addListener("menuItemState", "click", menuItemState.click, "WAF");
 	WAF.addListener("componentWebMain", "click", componentWebMain.click, "WAF");

@@ -4,10 +4,10 @@
 */
 
 #{id}richText1 {
-	 width: 200px;
+	 width: 160px;
 	 height: 16px;
 	 top: 7px;
-	 left: 469px;
+	 left: 498px;
 	
 	 position: absolute;
 	 
@@ -56,6 +56,16 @@
 	
 	 position: absolute;
 	 font-size: 10px;
+	 
+}
+
+#{id}buttonSave {
+	 width: 92px;
+	 height: 22px;
+	 top: 4px;
+	 left: 394px;
+	
+	 position: absolute;
 	 
 }
 

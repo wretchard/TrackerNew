@@ -16,23 +16,40 @@ function constructor (id) {
 		
 		$('#componentWebMain_dataGridBill').hover(
 		function() {
-			$('#componentWebMain_richText1').show();
+			$('#componentWebMain_richText1').html('Click result to see detail');
 		},
 		
 		function() {
-			$('#componentWebMain_richText1').hide();
-		})
+			$('#componentWebMain_richText1').html('');
+		}
+		);
 		
-		componentWebMain_arrBill=[];
-		sources.componentWebMain_arrBill.sync()
+		$('#componentWebMain_textSearch').hover(
+		function() {
+			$('#componentWebMain_richText1').html('Leave blank to find all');
+		},
+		
+		function() {
+			$('#componentWebMain_richText1').html('');
+		}		
+		);
+		
+		//componentWebMain_arrBill=[];
+		//sources.componentWebMain_arrBill.sync()
 
 	// @region namespaceDeclaration// @startlock
+	var buttonSave = {};	// @button
 	var textSearch = {};	// @textField
 	var dataGridBill = {};	// @dataGrid
 	var buttonStart = {};	// @button
 	// @endregion// @endlock
 
 	// eventHandlers// @lock
+
+	buttonSave.click = function buttonSave_click (event)// @startlock
+	{// @endlock
+		searchClick();
+	};// @lock
 
 	textSearch.keydown = function textSearch_keydown (event)// @startlock
 	{// @endlock
@@ -51,13 +68,14 @@ function constructor (id) {
 	};// @lock
 	
 	function rowClickCustom() {
+		varApi=openStates.openstates_api_key();
 		var varBillID=sources.componentWebMain_arrBill.bill_id;
 		var varsessionID=sources.componentWebMain_arrBill.session;
 		$$('componentWebMain').removeComponent()
 		$$('componentWebMain').loadComponent({path:'/Components/BillDetail.waComponent',
-		userData:{billID:varBillID, sessionID:varsessionID, api:varApi}})		
+		userData:{billID:varBillID, sessionID:varsessionID, api:varApi}})
 	}
-
+	
 	buttonStart.click = function buttonStart_click (event)// @startlock
 	{// @endlock
 		searchClick();
@@ -126,6 +144,7 @@ c_value = unescape(c_value.substring(c_start,c_end));
 return c_value;
 }
 	// @region eventManager// @startlock
+	WAF.addListener(this.id + "_buttonSave", "click", buttonSave.click, "WAF");
 	WAF.addListener(this.id + "_textSearch", "keydown", textSearch.keydown, "WAF");
 	WAF.addListener(this.id + "_dataGridBill", "onRowClick", dataGridBill.onRowClick, "WAF");
 	WAF.addListener(this.id + "_buttonStart", "click", buttonStart.click, "WAF");

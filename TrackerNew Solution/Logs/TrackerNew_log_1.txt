@@ -1299,3 +1299,45 @@
 2013-08-05 15:39:47 [com.wakanda-software.TrackerNew.TrackerNew] INFO - "TrackerNew" project closed
 2013-08-05 15:39:47 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - "ServerAdmin" project closed
 2013-08-05 15:39:47 [com.wakanda-software.TrackerNew] INFO - "TrackerNew" solution closed
+2013-08-06 14:45:11 [com.wakanda-software] INFO - Opens the solution "C:\Users\dse\Documents\Wakanda\TrackerNew\TrackerNew Solution\TrackerNew.waSolution" for running
+2013-08-06 14:45:11 [com.wakanda-software.TrackerNew] INFO - Users and groups directory opened
+2013-08-06 14:45:11 [com.wakanda-software.TrackerNew.TrackerNew] INFO - Datastore opened
+2013-08-06 14:45:11 [com.wakanda-software.TrackerNew.TrackerNew] INFO - "TrackerNew" project opened
+2013-08-06 14:45:11 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - "ServerAdmin" project opened
+2013-08-06 14:45:11 [com.wakanda-software.TrackerNew] INFO - "TrackerNew" solution opened
+2013-08-06 14:45:11 [com.wakanda-software] INFO - Starts "TrackerNew" solution
+2013-08-06 14:45:11 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - HTTP Server started
+2013-08-06 14:45:11 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - "ServerAdmin" project started
+2013-08-06 14:45:12 [com.wakanda-software.TrackerNew.TrackerNew] INFO - HTTP Server started
+2013-08-06 14:45:12 [com.wakanda-software.TrackerNew.TrackerNew] INFO - "TrackerNew" project started
+2013-08-06 14:45:12 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - Executes the bootstrap file(s)
+2013-08-06 14:45:12 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - Bootstrap file(s) executed
+2013-08-06 14:45:12 [com.wakanda-software.TrackerNew.TrackerNew] INFO - Executes the bootstrap file(s)
+2013-08-06 14:45:12 [com.wakanda-software.TrackerNew.TrackerNew] INFO - Bootstrap file(s) executed
+2013-08-06 14:45:12 [com.wakanda-software.TrackerNew] INFO - "TrackerNew" solution started
+2013-08-06 14:45:12 [com.wakanda-software] INFO - "TrackerNew" solution has been successfully opened for running (duration: 416 ms)
+2013-08-07 08:04:02 [com.wakanda-software] INFO - Opens the solution "C:\Users\dse\Documents\Wakanda\TrackerNew\TrackerNew Solution\TrackerNew.waSolution" for running
+2013-08-07 08:04:02 [com.wakanda-software.TrackerNew] INFO - Users and groups directory opened
+2013-08-07 08:04:02 [com.wakanda-software.TrackerNew.TrackerNew] INFO - Datastore opened
+2013-08-07 08:04:02 [com.wakanda-software.TrackerNew.TrackerNew] INFO - "TrackerNew" project opened
+2013-08-07 08:04:02 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - "ServerAdmin" project opened
+2013-08-07 08:04:02 [com.wakanda-software.TrackerNew] INFO - "TrackerNew" solution opened
+2013-08-07 08:04:02 [com.wakanda-software] INFO - Starts "TrackerNew" solution
+2013-08-07 08:04:03 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - HTTP Server started
+2013-08-07 08:04:03 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - "ServerAdmin" project started
+2013-08-07 08:04:03 [com.wakanda-software.TrackerNew.TrackerNew] INFO - HTTP Server started
+2013-08-07 08:04:03 [com.wakanda-software.TrackerNew.TrackerNew] INFO - "TrackerNew" project started
+2013-08-07 08:04:03 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - Executes the bootstrap file(s)
+2013-08-07 08:04:03 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - Bootstrap file(s) executed
+2013-08-07 08:04:03 [com.wakanda-software.TrackerNew.TrackerNew] INFO - Executes the bootstrap file(s)
+2013-08-07 08:04:03 [com.wakanda-software.TrackerNew.TrackerNew] INFO - Bootstrap file(s) executed
+2013-08-07 08:04:03 [com.wakanda-software.TrackerNew] INFO - "TrackerNew" solution started
+2013-08-07 08:04:03 [com.wakanda-software] INFO - "TrackerNew" solution has been successfully opened for running (duration: 467 ms)
+2013-08-07 13:45:46 [com.wakanda-software] INFO - Stops "TrackerNew" solution
+2013-08-07 13:45:47 [com.wakanda-software.TrackerNew.TrackerNew] INFO - "TrackerNew" project stopped
+2013-08-07 13:45:48 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - "ServerAdmin" project stopped
+2013-08-07 13:45:48 [com.wakanda-software.TrackerNew] INFO - "TrackerNew" solution stopped
+2013-08-07 13:45:48 [com.wakanda-software] INFO - Closes "TrackerNew" solution
+2013-08-07 13:45:49 [com.wakanda-software.TrackerNew.TrackerNew] INFO - "TrackerNew" project closed
+2013-08-07 13:45:49 [com.wakanda-software.TrackerNew.ServerAdmin] INFO - "ServerAdmin" project closed
+2013-08-07 13:45:49 [com.wakanda-software.TrackerNew] INFO - "TrackerNew" solution closed

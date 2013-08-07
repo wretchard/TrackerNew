@@ -97,6 +97,8 @@ function drawVote(data) {
 			.data(data)
 			.enter()
 			.append("li")
+			.on("mouseenter", showYesDetail)
+			.on("mouseleave", showNoDetail)
 			.text(function (d) {
 				  return String.fromCharCode(8226) + " " + d.id + ", " + d.date + ", "  + d.chamber + ", " + d.motion.replace(/,/g, '') + ", no count: " + d.no_count + ", yes count:" + d.yes_count;
 			  })	
@@ -135,6 +137,14 @@ function drawYes(data, subj, callback) {
 		callback();
 };
 
+function showYesDetail() {
+		$('#componentWebMain_richText2').html('Click to see who voted for what');
+}
+
+function showNoDetail() {
+		$('#componentWebMain_richText2').html('');
+}
+
 function drawNo(data) {
 	"use strict";
 	$('#componentWebMain_containerDetail').append("<p class='Title'>Voted No</p>")
@@ -157,13 +167,12 @@ function callURL(varStr) {
 	 	dataType:"jsonp",
 	 	async:true,
 	 	success: function(e) {
-			//parseE(e);
 			componentWebMain_varJsonDetail=e;
 			if (componentWebMain_varJsonDetail.summary !==undefined) {			
-			$('#componentWebMain_richTextSummary').html(componentWebMain_varJsonDetail.summary)
+			$('#componentWebMain_richTextSummary').html("<p class='Title'>" + componentWebMain_varJsonDetail.title + "</p>" + componentWebMain_varJsonDetail.summary)
 			}
 			else {
-			$('#componentWebMain_richTextSummary').html(componentWebMain_varJsonDetail.title)
+			$('#componentWebMain_richTextSummary').html("<p class='Title'>" + componentWebMain_varJsonDetail.title + "</p>")
 			}
 	 		},
 	 	error: function() {

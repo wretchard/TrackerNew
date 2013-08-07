@@ -31,12 +31,18 @@
 	
 }
 
+.Announcement {
+	
+	color:blue;
+	}
+
+
 .Title {
 	font-weight: bold;
 	text-align: center;
+	text-decoration : underline;
 	
 	}
-}
 
 .SecondLevel {
 	margin: 15px;
