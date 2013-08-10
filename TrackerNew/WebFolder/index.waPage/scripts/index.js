@@ -4,6 +4,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 
 // @region namespaceDeclaration// @startlock
+	var menuItemHistory = {};	// @menuItem
 	var menuItemAbout = {};	// @menuItem
 	var documentEvent = {};	// @document
 	var menuItemFind = {};	// @menuItem
@@ -36,6 +37,17 @@ return c_value;
 }
 
 // eventHandlers// @lock
+
+	menuItemHistory.click = function menuItemHistory_click (event)// @startlock
+	{// @endlock
+		try {
+			$$('componentWebMain').loadComponent('/Components/CandidateHistory.waComponent');
+			
+	
+	} catch (e) {
+
+	}
+	};// @lock
 
 	menuItemAbout.click = function menuItemAbout_click (event)// @startlock
 	{// @endlock
@@ -89,6 +101,7 @@ return c_value;
 
 
 // @region eventManager// @startlock
+	WAF.addListener("menuItemHistory", "click", menuItemHistory.click, "WAF");
 	WAF.addListener("menuItemAbout", "click", menuItemAbout.click, "WAF");
 	WAF.addListener("document", "onLoad", documentEvent.onLoad, "WAF");
 	WAF.addListener("menuItemFind", "click", menuItemFind.click, "WAF");

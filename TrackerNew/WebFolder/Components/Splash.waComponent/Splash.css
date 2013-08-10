@@ -7,8 +7,8 @@
 	 z-index: 1;
 	 width: 231px;
 	 height: 53px;
-	 top: 385px;
-	 left: 74px;
+	 top: 228px;
+	 left: 69px;
 	
 	 position: absolute;
 	 text-align: center;
@@ -22,8 +22,8 @@
 	 z-index: 1;
 	 width: 316px;
 	 height: 29px;
-	 top: 362px;
-	 left: 29px;
+	 top: 204px;
+	 left: 35px;
 	
 	 position: absolute;
 	 font-weight: bold;
@@ -52,16 +52,16 @@
 
 #{id}richTextBlurb {
 	 z-index: 1;
-	 width: 609px;
+	 width: 520px;
 	 height: 43px;
-	 top: 161px;
-	 left: 67px;
+	 top: 141px;
+	 left: 20px;
 	
 	 position: absolute;
-	 font-size: 36px;
 	 font-weight: bold;
 	 background-color: transparent;
 	 color: rgb(255, 0, 0);
+	 font-size: 30px;
 	 
 }
 

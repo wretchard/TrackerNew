@@ -1,4 +1,7 @@
-﻿function RetrieveData(URLJson) {
+﻿//a=require('openstates.api_key').openstates_api_key();
+
+
+function RetrieveData(URLJson) {
 try {
 
  var xhr, headers, result, resultObj, URLText, URLJson;
@@ -8,7 +11,7 @@ try {
  }
    
  var headersObj = {};
-
+   
  //xhr = new XMLHttpRequest(proxy); // instanciate the xhr object
  xhr = new XMLHttpRequest(); // instanciate the xhr object
     // the proxy parameter may not be necessary
@@ -18,7 +21,6 @@ try {
      if (state !== 4) { // while the status event is not Done we continue
          return;
      }
-
      var headers = this.getAllResponseHeaders(); //get the headers of the response
      var result = this.responseText;  //get the contents of the response
      var headersArray = headers.split('\n'); // split and format the headers string in an array
@@ -50,6 +52,9 @@ try {
 		{
      	resultObj = JSON.parse(result);
      	}
+     else if (
+     	headersObj['Content-Type'] && headersObj['Content-Type'].indexOf('json') == -1)
+     	{resultObj = JSON.parse(result);}
      else
 	 { // not JSON, return text
          resultTxt = result;
@@ -78,13 +83,12 @@ catch(error) {
 }
 }
 
-//strprob="http://openstates.org/api/v1/bills/AR/2011/SB 25/?apikey=a7b283f866e94ff0a572ec269c76a32e"
-//strok="http://openstates.org/api/v1/bills/?state=ar&q=car&apikey=a7b283f866e94ff0a572ec269c76a32e"
-//xx= "http://openstates.org/api/v1/bills/ca/20092010/AB%20667/?apikey=a7b283f866e94ff0a572ec269c76a32e"
-
-ax="http://openstates.org/api/v1/bills/CA/20132014/SB 134/?apikey=a7b283f866e94ff0a572ec269c76a32e"
-az="http://openstates.org/api/v1/bills/AR/2013/SB/?apikey=a7b283f866e94ff0a572ec269c76a32e"
-//ax="http://openstates.org/api/v1/bills/ca/20092010/AB%20667/?apikey=a7b283f866e94ff0a572ec269c76a32e"
-//a=RetrieveData(strok)
-a=RetrieveData(ax)
-a;
+var strURL= "http://openstates.org/api/v1/metadata/CA/?apikey=a7b283f866e94ff0a572ec269c76a32e"
+var z=""
+for(var i=0; i<5; i++)
+{  
+	obj=RetrieveData(strURL, onSuccess: function() {z=obj.statusLine + ", " + z})
+	debugger;
+	
+}
+z;

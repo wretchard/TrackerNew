@@ -11,12 +11,7 @@ function constructor (id) {
 	// @endregion// @endlock
 
 	this.load = function (data) {// @lock
-		var a;
-		varState = $$('richTextStateName').getValue();
-		varStr= "http://openstates.org/api/v1/bills/" + varState;
-		varStr= varStr + "/" + data.userData.sessionID;
-		varStr= varStr + "/" + data.userData.billID; 
-		varStr= varStr + "/?apikey=" + data.userData.api;
+		varStr=prepURL(data);
 		callURL(varStr);
 
 
@@ -51,6 +46,8 @@ function constructor (id) {
 	// @endregion// @endlock
 
 	};// @lock
+	
+
 
 function drawAction(data) {
 	"use strict";
@@ -69,6 +66,15 @@ function drawAction(data) {
 	
 	
 };
+
+function prepURL(data) {
+		varState = $$('richTextStateName').getValue();
+		varStr= "http://openstates.org/api/v1/bills/" + varState;
+		varStr= varStr + "/" + data.userData.sessionID;
+		varStr= varStr + "/" + data.userData.billID; 
+		varStr= varStr + "/?apikey=" + data.userData.api;
+		return varStr;	
+	}
 
 function drawSponsor(data) {
 	"use strict";
@@ -89,7 +95,6 @@ function drawSponsor(data) {
 
 function drawVote(data) {
 	"use strict";
-	//debugger;
 		d3.select('#componentWebMain_containerDetail')
 			.append("ul")
 			.attr('id', 'Action')			
@@ -130,13 +135,43 @@ function drawYes(data, subj, callback) {
 			.data(data)
 			.enter()
 			.append("li")
+			.on("mouseenter", showVoterDetailIn)
+			.on("mouseleave", showVoterDetailOut)			
 			.text(function (d) {
 				  return String.fromCharCode(8226) + " " + d.leg_id + ", " + d.name 
 			  })
-		$('#Action').before("<p class='Title'>Voted Yes to '" + subj + "'</p>")	
-		callback();
+			 .on('click', candidateVoteHistory);
+		$('#Action').before("<p class='Title'>Voted Yes to '" + subj + "'</p>")
+		callback()	
 };
 
+
+function drawNo(data, subj) {
+		"use strict";
+		d3.select('#Action')
+			.append("ul")
+			.attr('id', 'no')
+			.selectAll("li")
+			.data(data)
+			.enter()
+			.append("li")
+			.on("mouseenter", showVoterDetailIn)
+			.on("mouseleave", showVoterDetailOut)			
+			.text(function (d) {
+				  return String.fromCharCode(8226) + " " + d.leg_id + ", " + d.name 
+			  })
+			 .on('click', candidateVoteHistory);
+		$('#no').before("<p class='Title'>Voted No</p>")	
+		//callback();
+};
+
+function showVoterDetailIn() {
+		$('#componentWebMain_richText2').html('Click to search Bill selection for candidate votes');
+}
+
+function showVoterDetailOut() {
+		$('#componentWebMain_richText2').html('');
+}
 function showYesDetail() {
 		$('#componentWebMain_richText2').html('Click to see who voted for what');
 }
@@ -145,19 +180,92 @@ function showNoDetail() {
 		$('#componentWebMain_richText2').html('');
 }
 
-function drawNo(data) {
-	"use strict";
-	$('#componentWebMain_containerDetail').append("<p class='Title'>Voted No</p>")
-	$('#componentWebMain_containerDetail').append("<ul id='no'></ul>")
-	d3.select('#no')
-		.selectAll("li")
-		.data(data)
-		.enter()
-		.append("li")
-		.text(function (d) {
-			  return String.fromCharCode(8226) + " " + d.leg_id + ", " + d.name 
-		  });	
+function candidateVoteHistory() {
+	varApi=openStates.openstates_api_key();
+	b=(this.textContent).split(",");
+	b =b[0];
+	b=b.split(" ");
+	candidateID=b[1];
+	var i;
+	//clear candidate vote record
+	componentWebMain_arrCandVote=[]	
+	$('#componentWebMain_richText2').html('Processing ...');
+	for(i=0;i<componentWebMain_arrBill.length; i++) {
+		(function(a){
+		varState = $$('richTextStateName').getValue();
+		varStr= "http://openstates.org/api/v1/bills/" + varState;
+		varStr= varStr + "/" + componentWebMain_arrBill[a].session;
+		varStr= varStr + "/" + componentWebMain_arrBill[a].bill_id; 
+		varStr= varStr + "/?apikey=" + varApi;
+		callURL2(varStr, candidateID, componentWebMain_arrBill[i].title)}
+		(i))
 };
+
+//sources.componentWebMain_arrCandVote.sync();
+//$('#componentWebMain_richText2').html('');
+//debugger;
+//$$('componentWebMain').removeComponent();
+//$$('componentWebMain').loadComponent('/Components/CandidateHistory.waComponent');
+}
+
+function parseVotes(e, candidateID, title) {
+	for (var i=0; i<e.votes.length; i++) {
+		for (var j=0; j<e.votes[i].no_votes.length; j++)
+		{
+			if (candidateID == e.votes[i].no_votes[j].leg_id) {
+			//debugger;
+			componentWebMain_arrCandVote.push({
+				candidateID:candidateID, 
+				name:e.votes[i].yes_votes[j].name,
+				voteValue:'no', 
+				billTitle:title, 
+				motion_id:e.votes[i].id, 
+				motion:e.votes[i].motion})
+			}
+		}
+		
+		for (var k=0; k<e.votes[i].yes_votes.length; k++)
+		{
+			if (candidateID == e.votes[i].yes_votes[k].leg_id) {
+			//debugger;
+			componentWebMain_arrCandVote.push({
+				candidateID:candidateID, 
+				name:e.votes[i].yes_votes[k].name,
+				voteValue:'yes', 
+				billTitle:title, 
+				motion_id:e.votes[i].id, 
+				motion:e.votes[i].motion})
+			}
+				
+		}		
+			
+	}
+}
+
+function callURL2(varStr, candidateID, title) {
+	 $.ajax(
+	 {
+	 	url:varStr,
+	 	type:"GET",
+	 	dataType:"jsonp",
+	 	async:true,
+	 	success: function(e) {
+			//componentWebMain_varJsonDetail=e;
+			parseVotes(e, candidateID, title);
+			//debugger;
+			//if (componentWebMain_varJsonDetail.title !==undefined) {	
+			//$('#componentWebMain_richTextSummary').html("<p class='Title'>" + componentWebMain_varJsonDetail.title + "</p>" + componentWebMain_varJsonDetail.summary)
+			//}
+			//else {
+			//$('#componentWebMain_richTextSummary').html("<p class='Title'>" + componentWebMain_varJsonDetail.title + "</p>")
+			//}
+	 		},
+	 	error: function() {
+	 		alert('error');
+	 		}
+	 }
+	 );
+	}
 	
 function callURL(varStr) {
 	 $.ajax(

@@ -4,10 +4,10 @@
 */
 
 #{id}richText1 {
-	 width: 160px;
+	 width: 340px;
 	 height: 16px;
 	 top: 7px;
-	 left: 498px;
+	 left: 388px;
 	
 	 position: absolute;
 	 
@@ -20,6 +20,7 @@
 	 left: 12px;
 	
 	 position: absolute;
+	 max-width: 300px;
 	 
 }
 
@@ -39,7 +40,7 @@
 }
 
 #{id}buttonStart {
-	 width: 92px;
+	 width: 84px;
 	 height: 22px;
 	 top: 4px;
 	 left: 302px;
@@ -50,22 +51,12 @@
 
 #{id}dataGridBill {
 	 width: 744px;
-	 height: 600px;
+	 height: 610px;
 	 top: 32px;
 	 left: 0px;
 	
 	 position: absolute;
 	 font-size: 10px;
-	 
-}
-
-#{id}buttonSave {
-	 width: 92px;
-	 height: 22px;
-	 top: 4px;
-	 left: 394px;
-	
-	 position: absolute;
 	 
 }
 

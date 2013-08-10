@@ -26,7 +26,7 @@ function constructor (id) {
 		
 		$('#componentWebMain_textSearch').hover(
 		function() {
-			$('#componentWebMain_richText1').html('Leave blank to find all');
+			$('#componentWebMain_richText1').html('Leave blank to find all. Some states may take too long.');
 		},
 		
 		function() {
@@ -34,22 +34,14 @@ function constructor (id) {
 		}		
 		);
 		
-		//componentWebMain_arrBill=[];
-		//sources.componentWebMain_arrBill.sync()
 
 	// @region namespaceDeclaration// @startlock
-	var buttonSave = {};	// @button
 	var textSearch = {};	// @textField
 	var dataGridBill = {};	// @dataGrid
 	var buttonStart = {};	// @button
 	// @endregion// @endlock
 
 	// eventHandlers// @lock
-
-	buttonSave.click = function buttonSave_click (event)// @startlock
-	{// @endlock
-		searchClick();
-	};// @lock
 
 	textSearch.keydown = function textSearch_keydown (event)// @startlock
 	{// @endlock
@@ -103,6 +95,7 @@ function callURL(varStr) {
 	 		}
 	 }
 	 );
+	 $('#componentWebMain_richText1').html('Retrieving records ...');
 	}
 	
 function parseBill(objJson) {
@@ -117,6 +110,7 @@ function parseBill(objJson) {
 		updated:varBill.session.updated});
 	};
 	sources.componentWebMain_arrBill.sync()
+	$('#componentWebMain_richText1').html('Retrieval complete');
 }
 
 getStateCookie =function getCookie(c_name)
@@ -144,7 +138,6 @@ c_value = unescape(c_value.substring(c_start,c_end));
 return c_value;
 }
 	// @region eventManager// @startlock
-	WAF.addListener(this.id + "_buttonSave", "click", buttonSave.click, "WAF");
 	WAF.addListener(this.id + "_textSearch", "keydown", textSearch.keydown, "WAF");
 	WAF.addListener(this.id + "_dataGridBill", "onRowClick", dataGridBill.onRowClick, "WAF");
 	WAF.addListener(this.id + "_buttonStart", "click", buttonStart.click, "WAF");
