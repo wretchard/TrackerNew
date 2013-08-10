@@ -191,18 +191,18 @@ function candidateVoteHistory() {
 	componentWebMain_arrCandVote=[]	
 	$('#componentWebMain_richText2').html('Processing ...');
 	for(i=0;i<componentWebMain_arrBill.length; i++) {
-		(function(a){
+		(function(i){
 		varState = $$('richTextStateName').getValue();
 		varStr= "http://openstates.org/api/v1/bills/" + varState;
-		varStr= varStr + "/" + componentWebMain_arrBill[a].session;
-		varStr= varStr + "/" + componentWebMain_arrBill[a].bill_id; 
+		varStr= varStr + "/" + componentWebMain_arrBill[i].session;
+		varStr= varStr + "/" + componentWebMain_arrBill[i].bill_id; 
 		varStr= varStr + "/?apikey=" + varApi;
 		callURL2(varStr, candidateID, componentWebMain_arrBill[i].title)}
 		(i))
 };
 
 //sources.componentWebMain_arrCandVote.sync();
-//$('#componentWebMain_richText2').html('');
+//$('#componentWebMain_richText2').html('done');
 //debugger;
 //$$('componentWebMain').removeComponent();
 //$$('componentWebMain').loadComponent('/Components/CandidateHistory.waComponent');
@@ -240,6 +240,9 @@ function parseVotes(e, candidateID, title) {
 		}		
 			
 	}
+	z= Array(Math.round(Math.random()*i)).join('**')
+	$('#componentWebMain_richText2').html(z);
+	
 }
 
 function callURL2(varStr, candidateID, title) {
@@ -252,13 +255,6 @@ function callURL2(varStr, candidateID, title) {
 	 	success: function(e) {
 			//componentWebMain_varJsonDetail=e;
 			parseVotes(e, candidateID, title);
-			//debugger;
-			//if (componentWebMain_varJsonDetail.title !==undefined) {	
-			//$('#componentWebMain_richTextSummary').html("<p class='Title'>" + componentWebMain_varJsonDetail.title + "</p>" + componentWebMain_varJsonDetail.summary)
-			//}
-			//else {
-			//$('#componentWebMain_richTextSummary').html("<p class='Title'>" + componentWebMain_varJsonDetail.title + "</p>")
-			//}
 	 		},
 	 	error: function() {
 	 		alert('error');
