@@ -12,6 +12,7 @@ function constructor (id) {
 
 	this.load = function (data) {// @lock
 
+
 	// @region namespaceDeclaration// @startlock
 	// @endregion// @endlock
 

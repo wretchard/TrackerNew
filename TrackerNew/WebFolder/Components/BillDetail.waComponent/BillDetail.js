@@ -162,7 +162,7 @@ function drawNo(data, subj) {
 			  })
 			 .on('click', candidateVoteHistory);
 		$('#no').before("<p class='Title'>Voted No</p>")	
-		//callback();
+
 };
 
 function showVoterDetailIn() {
@@ -180,7 +180,8 @@ function showNoDetail() {
 		$('#componentWebMain_richText2').html('');
 }
 
-function candidateVoteHistory() {
+
+function candidateVoteHistory	() {
 	varApi=openStates.openstates_api_key();
 	b=(this.textContent).split(",");
 	b =b[0];
@@ -188,8 +189,8 @@ function candidateVoteHistory() {
 	candidateID=b[1];
 	var i;
 	//clear candidate vote record
-	componentWebMain_arrCandVote=[]	
-	$('#componentWebMain_richText2').html('Processing ...');
+	componentWebMain_arrCandVote=[];
+	$('#componentWebMain_richText2').html('')
 	for(i=0;i<componentWebMain_arrBill.length; i++) {
 		(function(i){
 		varState = $$('richTextStateName').getValue();
@@ -197,10 +198,23 @@ function candidateVoteHistory() {
 		varStr= varStr + "/" + componentWebMain_arrBill[i].session;
 		varStr= varStr + "/" + componentWebMain_arrBill[i].bill_id; 
 		varStr= varStr + "/?apikey=" + varApi;
-		callURL2(varStr, candidateID, componentWebMain_arrBill[i].title)}
+		callURL2(varStr, candidateID, componentWebMain_arrBill[i].title, i, componentWebMain_arrBill.length);
+		}
 		(i))
-};
+	};
+	
+}
 
+function showRecord(i, lEngth) {
+//debugger;
+if(i<lEngth-1) {
+
+	$('#componentWebMain_richText2').html("processing ...");
+}
+else {
+	$$('componentWebMain').removeComponent();
+	$$('componentWebMain').loadComponent('/Components/CandidateHistory.waComponent');
+}
 //sources.componentWebMain_arrCandVote.sync();
 //$('#componentWebMain_richText2').html('done');
 //debugger;
@@ -240,12 +254,12 @@ function parseVotes(e, candidateID, title) {
 		}		
 			
 	}
-	z= Array(Math.round(Math.random()*i)).join('**')
-	$('#componentWebMain_richText2').html(z);
+
 	
 }
 
-function callURL2(varStr, candidateID, title) {
+
+function callURL2(varStr, candidateID, title, i, l) {
 	 $.ajax(
 	 {
 	 	url:varStr,
@@ -253,8 +267,8 @@ function callURL2(varStr, candidateID, title) {
 	 	dataType:"jsonp",
 	 	async:true,
 	 	success: function(e) {
-			//componentWebMain_varJsonDetail=e;
 			parseVotes(e, candidateID, title);
+			showRecord(i,l);
 	 		},
 	 	error: function() {
 	 		alert('error');
