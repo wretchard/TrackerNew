@@ -191,14 +191,14 @@ function candidateVoteHistory	() {
 	//clear candidate vote record
 	componentWebMain_arrCandVote=[];
 	$('#componentWebMain_richText2').html('')
-	for(i=0;i<componentWebMain_arrBill.length; i++) {
+	for(i=0;i<arrBill.length; i++) {
 		(function(i){
 		varState = $$('richTextStateName').getValue();
 		varStr= "http://openstates.org/api/v1/bills/" + varState;
-		varStr= varStr + "/" + componentWebMain_arrBill[i].session;
-		varStr= varStr + "/" + componentWebMain_arrBill[i].bill_id; 
+		varStr= varStr + "/" + arrBill[i].session;
+		varStr= varStr + "/" + arrBill[i].bill_id; 
 		varStr= varStr + "/?apikey=" + varApi;
-		callURL2(varStr, candidateID, componentWebMain_arrBill[i].title, i, componentWebMain_arrBill.length);
+		callURL2(varStr, candidateID, arrBill[i].title, i, arrBill.length);
 		}
 		(i))
 	};

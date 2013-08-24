@@ -4,7 +4,7 @@
 */
 
 #{id}textField3 {
-	 width: 600px;
+	 width: 629px;
 	 height: 60px;
 	 top: 60px;
 	 left: 95px;
@@ -15,8 +15,8 @@
 
 #{id}label3 {
 	 width: 75px;
-	 height: 16px;
-	 top: 82px;
+	 height: 15px;
+	 top: 82.5px;
 	 left: 15px;
 	
 	 position: absolute;
@@ -25,7 +25,7 @@
 }
 
 #{id}textField2 {
-	 width: 600px;
+	 width: 629px;
 	 height: 50px;
 	 top: 5px;
 	 left: 95px;
@@ -37,8 +37,8 @@
 
 #{id}label2 {
 	 width: 75px;
-	 height: 16px;
-	 top: 22px;
+	 height: 15px;
+	 top: 22.5px;
 	 left: 15px;
 	
 	 position: absolute;
@@ -49,11 +49,11 @@
 #{id}container1 {
 	 width: 740px;
 	 height: 128px;
-	 top: 524px;
-	 left: 1px;
+	 top: 513px;
+	 left: 0px;
 	
 	 position: absolute;
-	 background-color: transparent;
+	 background-color: rgb(255, 255, 255);
 	 
 }
 
@@ -85,9 +85,9 @@
 }
 
 #{id}dataGridCandidate {
-	 width: 745px;
-	 height: 496px;
-	 top: 25px;
+	 width: 740px;
+	 height: 487px;
+	 top: 23px;
 	 left: 0px;
 	
 	 position: absolute;

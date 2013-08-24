@@ -62,8 +62,10 @@ function constructor (id) {
 	
 	function rowClickCustom() {
 		varApi=openStates.openstates_api_key();
-		var varBillID=sources.componentWebMain_arrBill.bill_id;
-		var varsessionID=sources.componentWebMain_arrBill.session;
+		//var varBillID=sources.componentWebMain_arrBill.bill_id;
+		var varBillID=sources.arrBill.bill_id;
+		//var varsessionID=sources.componentWebMain_arrBill.session;
+		var varsessionID=sources.arrBill.session;
 		$$('componentWebMain').removeComponent()
 		$$('componentWebMain').loadComponent({path:'/Components/BillDetail.waComponent',
 		userData:{billID:varBillID, sessionID:varsessionID, api:varApi}})
@@ -101,16 +103,19 @@ function callURL(varStr) {
 	
 function parseBill(objJson) {
 	//debugger;
-	componentWebMain_arrBill=[];
+	//componentWebMain_arrBill=[];
+	arrBill=[];
 	for (var i=0; i<objJson.length; i++) {
 		varBill=objJson[i];
-		componentWebMain_arrBill.push({session:varBill.session, 
+		//componentWebMain_arrBill.push({session:varBill.session, 
+		arrBill.push({session:varBill.session,
 		bill_id:varBill.bill_id, 
 		chamber:varBill.chamber, 
 		title:varBill.title, 
 		updated:varBill.session.updated});
 	};
-	sources.componentWebMain_arrBill.sync()
+	//sources.componentWebMain_arrBill.sync()
+	sources.arrBill.sync()
 	$('#componentWebMain_richText1').html('Retrieval complete');
 }
 
