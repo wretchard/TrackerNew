@@ -215,11 +215,6 @@ else {
 	$$('componentWebMain').removeComponent();
 	$$('componentWebMain').loadComponent('/Components/CandidateHistory.waComponent');
 }
-//sources.componentWebMain_arrCandVote.sync();
-//$('#componentWebMain_richText2').html('done');
-//debugger;
-//$$('componentWebMain').removeComponent();
-//$$('componentWebMain').loadComponent('/Components/CandidateHistory.waComponent');
 }
 
 function parseVotes(e, candidateID, title) {

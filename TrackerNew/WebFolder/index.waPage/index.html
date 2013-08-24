@@ -13,25 +13,30 @@
 <meta name="WAF.config.loadJS" id="waf-script" content="scripts/index.js"/>
 <meta name="WAF.config.rpc.file" content="/rpc-proxy/openstates.api_key?namespace=openStates"/>
 <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-</head>
+
+		</head>
 
 <body id="waf-body" data-workspace-width="0" data-workspace-orientation="portrait" data-workspace-height="0" data-viewport-width="device-width" data-viewport-minimum-scale="1.0" data-viewport-maximum-scale="1.0" data-viewport-initial-scale="1.0" data-type="document" data-theme="default" data-rpc-validation="false" data-rpc-namespace="rpc" data-rpc-activate="false" data-platform="desktop" data-lib="WAF" data-group="[]" data-entire-model="false" data-apple-meta-tags-status-bar="default" style="bottom:;right:;visibility:hidden;">
-	<ul id="menuBarWebMain" data-type="menuBar" data-subMenuShow="click" data-lib="WAF" data-level="0" data-hideonload="true" data-display="horizontal" data-constraint-top="true" data-constraint-left="true" class="waf-widget waf-menuBar ">
+	<ul id="menuBarWebMain" data-type="menuBar" data-tab-margin="0" data-subMenuShow="click" data-lib="WAF" data-level="0" data-hideonload="true" data-display="horizontal" data-constraint-top="true" data-constraint-left="true" class="waf-widget waf-menuBar ">
 	 	<li id="menuItemState" data-type="menuItem" data-text="Customize" data-linked-tag="richText1" data-lib="WAF" data-context="['protected','allowDrop','allowRemove']" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" class="waf-widget waf-menuItem waf-menuItem-level-0 waf-level-0">
 	 	 	<div id="richText1" data-type="richText" data-target="_blank" data-plainText="true" data-overflow="Hidden" data-linked-tag="menuItem1" data-lib="WAF" data-label-position="left" data-label="" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" data-autoWidth="false" class="waf-widget waf-richText ">Customize</div>
  	 	</li>
  		<li id="menuItemFind" data-type="menuItem" data-text="Find In Bills" data-linked-tag="richText2" data-lib="WAF" data-context="['protected','allowDrop','allowRemove']" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" class="waf-widget waf-menuItem waf-menuItem-level-0 waf-level-0">
 	 	 	<div id="richText2" data-type="richText" data-target="_blank" data-plainText="true" data-overflow="Hidden" data-linked-tag="menuItem2" data-lib="WAF" data-label-position="left" data-label="" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" data-autoWidth="false" class="waf-widget waf-richText ">Find In Bills</div>
  	 	</li>
- 		<li id="menuItemHistory" data-type="menuItem" data-lib="WAF" data-context="['protected','allowDrop','allowRemove']" class="waf-widget waf-menuItem waf-menuItem-level-0 waf-level-0" data-constraint-left="true" data-constraint-top="true" data-constraint-bottom="false" data-constraint-right="false" data-linked-tag="richText3" data-text="Candidate History">
-	 	 	<div id="richText3" data-type="richText" data-lib="WAF" class="waf-widget waf-richText " data-autoWidth="false" data-label="" data-label-position="left" data-target="_blank" data-overflow="Hidden" data-plainText="true" data-constraint-left="true" data-constraint-top="true" data-constraint-bottom="false" data-constraint-right="false" data-linked-tag="menuItem1">Candidate History</div>
+ 		<li id="menuBillDetail" data-type="menuItem" data-linked-tag="richText5" data-lib="WAF" data-context="['protected','allowDrop','allowRemove']" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" class="waf-widget waf-menuItem waf-menuItem-level-0 waf-level-0">
+	 	 	<div id="richText5" data-type="richText" data-target="_blank" data-plainText="true" data-overflow="Hidden" data-linked-tag="menuItem1" data-lib="WAF" data-label-position="left" data-label="" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" data-autoWidth="false" class="waf-widget waf-richText ">Bill Detail</div>
+ 	 	</li><li id="menuCandidates" data-type="menuItem" data-linked-tag="richText6" data-lib="WAF" data-context="['protected','allowDrop','allowRemove']" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" class="waf-widget waf-menuItem waf-menuItem-level-0 waf-level-0" data-text="Legislators">
+	 	 	<div id="richText6" data-type="richText" data-target="_blank" data-plainText="true" data-overflow="Hidden" data-linked-tag="menuItem1" data-lib="WAF" data-label-position="left" data-label="" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" data-autoWidth="false" class="waf-widget waf-richText ">Legislators</div>
+ 	 	</li><li id="menuItemHistory" data-type="menuItem" data-text="Voting History" data-linked-tag="richText3" data-lib="WAF" data-context="['protected','allowDrop','allowRemove']" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" class="waf-widget waf-menuItem waf-menuItem-level-0 waf-level-0">
+	 	 	<div id="richText3" data-type="richText" data-target="_blank" data-plainText="true" data-overflow="Hidden" data-linked-tag="menuItem1" data-lib="WAF" data-label-position="left" data-label="" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" data-autoWidth="false" class="waf-widget waf-richText ">Voting History</div>
  	 	</li><li id="menuItemAbout" data-type="menuItem" data-linked-tag="richText4" data-lib="WAF" data-context="['protected','allowDrop','allowRemove']" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" class="waf-widget waf-menuItem waf-menuItem-level-0 waf-level-0">
 	 	 	<div id="richText4" data-type="richText" data-target="_blank" data-plainText="true" data-overflow="Hidden" data-linked-tag="menuItem1" data-lib="WAF" data-label-position="left" data-label="" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" data-autoWidth="false" class="waf-widget waf-richText ">About</div>
  	 	</li>
- 	</ul>
+ 	
+ 		</ul>
 	<div id="componentWebMain" data-type="component" data-start-load="true" data-path="/Components/Splash.waComponent" data-lib="WAF" data-constraint-top="true" data-constraint-left="true" class="waf-widget waf-component "></div>
 		<div id="richTextStateName" data-type="richText" data-target="_blank" data-plainText="true" data-overflow="Hidden" data-lib="WAF" data-label-position="left" data-label="" data-constraint-top="true" data-constraint-left="true" data-autoWidth="false" class="waf-widget waf-richText "></div>
-	
 		<script type="text/javascript" src="/waLib/WAF/Loader.js"></script>
 	</body>
 </html>

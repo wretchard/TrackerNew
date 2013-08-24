@@ -4,6 +4,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 
 // @region namespaceDeclaration// @startlock
+	var menuCandidates = {};	// @menuItem
+	var menuBillDetail = {};	// @menuItem
 	var menuItemHistory = {};	// @menuItem
 	var menuItemAbout = {};	// @menuItem
 	var documentEvent = {};	// @document
@@ -38,6 +40,29 @@ return c_value;
 
 // eventHandlers// @lock
 
+	menuCandidates.click = function menuCandidates_click (event)// @startlock
+	{// @endlock
+		try {
+			$$('componentWebMain').loadComponent('/Components/Candidate.waComponent');
+			
+	
+	} catch (e) {
+
+	}	
+	};// @lock
+
+	menuBillDetail.click = function menuBillDetail_click (event)// @startlock
+	{// @endlock
+		//$$('componentWebMain').removeComponent()
+		$$('componentWebMain').loadComponent('/Components/BillDetail.waComponent');
+		if (componentWebMain_varJsonDetail.summary !==undefined) {			
+			$('#componentWebMain_richTextSummary').html("<p class='Title'>" + componentWebMain_varJsonDetail.title + "</p>" + componentWebMain_varJsonDetail.summary)
+			}
+		else {
+			$('#componentWebMain_richTextSummary').html("<p class='Title'>" + componentWebMain_varJsonDetail.title + "</p>")
+		}		
+	};// @lock
+
 	menuItemHistory.click = function menuItemHistory_click (event)// @startlock
 	{// @endlock
 		try {
@@ -61,7 +86,7 @@ return c_value;
 
 	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
 	{// @endlock
-		setTimeout(function(){setupPage()},5000);
+		//setTimeout(function(){setupPage()},5000);
 
 	};// @lock
 
@@ -93,7 +118,7 @@ return c_value;
 		try {
 		setupPage()
 		} catch (e) {
-		console.log(e.message);
+		alert(e.message);
 		}
 
 	};// @lock
@@ -101,6 +126,8 @@ return c_value;
 
 
 // @region eventManager// @startlock
+	WAF.addListener("menuCandidates", "click", menuCandidates.click, "WAF");
+	WAF.addListener("menuBillDetail", "click", menuBillDetail.click, "WAF");
 	WAF.addListener("menuItemHistory", "click", menuItemHistory.click, "WAF");
 	WAF.addListener("menuItemAbout", "click", menuItemAbout.click, "WAF");
 	WAF.addListener("document", "onLoad", documentEvent.onLoad, "WAF");
@@ -115,9 +142,15 @@ return c_value;
 		if (stateName !==null) {
 			stateName=stateName.toUpperCase();
 		}
-		$$('richTextStateName').setValue(stateName)			
+		$$('richTextStateName').setValue(stateName)	
+
+		//var apiKey=openStates.openstates_api_key()
+		//var varStr='http://openstates.org/api/v1/legislators/?state=' + stateName.toLowerCase() + '&apikey=' + apiKey;
+		//debugger;
+		//callURL(varStr)				
 		if ($$('componentWebMain').config['data-path']=="/Components/Splash.waComponent") {
 		$$('componentWebMain').removeComponent();
 		$$('menuBarWebMain').show()			
 		}
 	}
+	

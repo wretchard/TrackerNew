@@ -3,11 +3,21 @@
 	Changes to this CSS file might be lost when it is regenerated.
 */
 
+#{id}richText3 {
+	 width: 85px;
+	 height: 15px;
+	 top: 186px;
+	 left: 142px;
+	
+	 position: absolute;
+	 
+}
+
 #{id}richText2 {
 	 z-index: 1;
 	 width: 231px;
 	 height: 53px;
-	 top: 228px;
+	 top: 233px;
 	 left: 69px;
 	
 	 position: absolute;
@@ -21,9 +31,9 @@
 #{id}richText1 {
 	 z-index: 1;
 	 width: 316px;
-	 height: 29px;
-	 top: 204px;
-	 left: 35px;
+	 height: 24px;
+	 top: 212px;
+	 left: 31px;
 	
 	 position: absolute;
 	 font-weight: bold;

@@ -14,10 +14,7 @@ function constructor (id) {
 
 	this.load = function (data) {// @lock
 		
-		var stateName=$$('richTextStateName').getValue()
-		var apiKey=openStates.openstates_api_key()
-		var str13='http://openstates.org/api/v1/legislators/?state=' + stateName.toLowerCase() + '&apikey=' + apiKey;
-		alert(str13);
+		
 		$('#componentWebMain_dataGridBill').hover(
 		function() {
 			$('#componentWebMain_richText1').html('Click result to see detail');

@@ -3,9 +3,45 @@
 	Changes to this CSS file might be lost when it is regenerated.
 */
 
+#menuBarWebMain .waf-menuItem {
+	 font-size: 11px;
+	 color: rgb(76, 76, 76);
+	 
+}
+
+#menuBarWebMain > .waf-menuItem {
+	 margin-bottom: 0px;
+	 
+}
+
+#menuBarWebMain > .waf-menuItem:not(.waf-menuItem-last) {
+	 margin-right: 0px;
+	 
+}
+
+#richText6 {
+	 width: 100px;
+	 height: 28px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#richText5 {
+	 width: 100px;
+	 height: 28px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
 #richText3 {
-	 width: 109px;
-	 height: 30px;
+	 width: 100px;
+	 height: 28px;
 	 top: 0px;
 	 left: 0px;
 	
@@ -14,8 +50,8 @@
 }
 
 #richText4 {
-	 width: 110px;
-	 height: 30px;
+	 width: 101px;
+	 height: 28px;
 	 top: 0px;
 	 left: 0px;
 	
@@ -24,8 +60,8 @@
 }
 
 #richText2 {
-	 width: 109px;
-	 height: 30px;
+	 width: 100px;
+	 height: 28px;
 	 top: 0px;
 	 left: 0px;
 	
@@ -34,8 +70,8 @@
 }
 
 #richText1 {
-	 width: 109px;
-	 height: 30px;
+	 width: 100px;
+	 height: 28px;
 	 top: 0px;
 	 left: 0px;
 	
@@ -44,8 +80,8 @@
 }
 
 #menuBarWebMain {
-	 width: 442px;
-	 height: 32px;
+	 width: 610px;
+	 height: 30px;
 	 top: 0px;
 	 left: 0px;
 	
@@ -64,8 +100,8 @@
 }
 
 #menuItemState {
-	 width: 110px;
-	 height: 30px;
+	 width: 101px;
+	 height: 28px;
 	 top: 0px;
 	 left: 0px;
 	
@@ -75,8 +111,8 @@
 }
 
 #menuItemFind {
-	 width: 110px;
-	 height: 30px;
+	 width: 101px;
+	 height: 28px;
 	 top: 0px;
 	 left: 0px;
 	
@@ -89,7 +125,7 @@
 	 width: 81px;
 	 height: 28px;
 	 top: 2px;
-	 left: 476px;
+	 left: 630px;
 	
 	 position: absolute;
 	 background-color: transparent;
@@ -100,8 +136,8 @@
 }
 
 #menuItemAbout {
-	 width: 110px;
-	 height: 30px;
+	 width: 101px;
+	 height: 28px;
 	 top: 0px;
 	 left: 0px;
 	
@@ -111,8 +147,30 @@
 }
 
 #menuItemHistory {
-	 width: 110px;
-	 height: 30px;
+	 width: 101px;
+	 height: 28px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 font-size: 12px;
+	 
+}
+
+#menuBillDetail {
+	 width: 101px;
+	 height: 28px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 font-size: 12px;
+	 
+}
+
+#menuCandidates {
+	 width: 101px;
+	 height: 28px;
 	 top: 0px;
 	 left: 0px;
 	
