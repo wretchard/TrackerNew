@@ -104,7 +104,6 @@ function refreshPage() {
 }
 	
 function parseBill(objJson, callback) {
-	//debugger;
 	componentWebMain_arrStateCandidate=[];
 	for (var i=0; i<objJson.length; i++) {
 		varCand=objJson[i];

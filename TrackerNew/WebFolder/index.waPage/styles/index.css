@@ -20,8 +20,8 @@
 }
 
 #richText6 {
-	 width: 100px;
-	 height: 28px;
+	 width: 79px;
+	 height: 30px;
 	 top: 0px;
 	 left: 0px;
 	
@@ -30,8 +30,8 @@
 }
 
 #richText5 {
-	 width: 100px;
-	 height: 28px;
+	 width: 79px;
+	 height: 30px;
 	 top: 0px;
 	 left: 0px;
 	
@@ -40,8 +40,8 @@
 }
 
 #richText3 {
-	 width: 100px;
-	 height: 28px;
+	 width: 79px;
+	 height: 30px;
 	 top: 0px;
 	 left: 0px;
 	
@@ -50,8 +50,8 @@
 }
 
 #richText4 {
-	 width: 101px;
-	 height: 28px;
+	 width: 80px;
+	 height: 30px;
 	 top: 0px;
 	 left: 0px;
 	
@@ -60,8 +60,8 @@
 }
 
 #richText2 {
-	 width: 100px;
-	 height: 28px;
+	 width: 79px;
+	 height: 30px;
 	 top: 0px;
 	 left: 0px;
 	
@@ -70,8 +70,8 @@
 }
 
 #richText1 {
-	 width: 100px;
-	 height: 28px;
+	 width: 79px;
+	 height: 30px;
 	 top: 0px;
 	 left: 0px;
 	
@@ -80,12 +80,13 @@
 }
 
 #menuBarWebMain {
-	 width: 610px;
+	 width: 485px;
 	 height: 30px;
 	 top: 0px;
 	 left: 0px;
 	
 	 position: absolute;
+	 background-color: transparent;
 	 
 }
 
@@ -100,8 +101,8 @@
 }
 
 #menuItemState {
-	 width: 101px;
-	 height: 28px;
+	 width: 80px;
+	 height: 30px;
 	 top: 0px;
 	 left: 0px;
 	
@@ -111,8 +112,8 @@
 }
 
 #menuItemFind {
-	 width: 101px;
-	 height: 28px;
+	 width: 80px;
+	 height: 30px;
 	 top: 0px;
 	 left: 0px;
 	
@@ -136,8 +137,8 @@
 }
 
 #menuItemAbout {
-	 width: 101px;
-	 height: 28px;
+	 width: 80px;
+	 height: 30px;
 	 top: 0px;
 	 left: 0px;
 	
@@ -147,8 +148,8 @@
 }
 
 #menuItemHistory {
-	 width: 101px;
-	 height: 28px;
+	 width: 80px;
+	 height: 30px;
 	 top: 0px;
 	 left: 0px;
 	
@@ -158,8 +159,8 @@
 }
 
 #menuBillDetail {
-	 width: 101px;
-	 height: 28px;
+	 width: 80px;
+	 height: 30px;
 	 top: 0px;
 	 left: 0px;
 	
@@ -169,8 +170,8 @@
 }
 
 #menuCandidates {
-	 width: 101px;
-	 height: 28px;
+	 width: 80px;
+	 height: 30px;
 	 top: 0px;
 	 left: 0px;
 	

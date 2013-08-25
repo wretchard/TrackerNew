@@ -23,9 +23,9 @@ function constructor (id) {
 
 	comboState.change = function comboState_change (event)// @startlock
 	{// @endlock
-		var trackerState = this.getValue();
-		setStateCookie('trackerState',trackerState,7)
-		$$('richTextStateName').setValue(trackerState.toUpperCase())
+		source.varStateName = this.getValue();
+		setStateCookie('trackerState',source.varStateName,7)
+		$$('richTextStateName').setValue(source.varStateName.toUpperCase())
 	};// @lock
 	
 setStateCookie = function setCookie(c_name,value,exdays)
