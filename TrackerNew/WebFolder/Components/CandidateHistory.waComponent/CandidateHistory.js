@@ -11,7 +11,8 @@ function constructor (id) {
 	// @endregion// @endlock
 
 	this.load = function (data) {// @lock
-
+	leg_id =$$('componentWebMain_richText2').getValue()
+	$$('componentWebMain_richText1').setValue(cDetails(leg_id).full_name + ", " + cDetails(leg_id).party)
 
 	// @region namespaceDeclaration// @startlock
 	// @endregion// @endlock
@@ -27,3 +28,12 @@ function constructor (id) {
 }// @startlock
 return constructor;
 })();// @endlock
+
+function cDetails(leg_id) {
+	s=arrStateCandidate
+	for (var i=0; i<s.length; i++) {
+		if(s[i].leg_id == leg_id) {
+			return s[i]
+		}
+	}
+}

@@ -13,6 +13,13 @@ function constructor (id) {
 	this.load = function (data) {// @lock
 		varStr=prepURL(data);
 		callURL(varStr);
+		if (sources.arrStateCandidate !== undefined) {
+			refreshPage();
+		}
+		else {
+			loadLegislatorData();
+		}
+		
 
 
 	// @region namespaceDeclaration// @startlock
@@ -47,7 +54,52 @@ function constructor (id) {
 
 	};// @lock
 	
+function loadLegislatorData() {
+	var stateName=$$('richTextStateName').getValue();
+	var apiKey=openStates.openstates_api_key();
+	var varStr='http://openstates.org/api/v1/legislators/?state=' + stateName.toLowerCase() + '&apikey=' + apiKey;
+	callURLCand(varStr)	
+};
 
+function callURLCand(varStr) {
+	 $.ajax(
+	 {
+	 	url:varStr,
+	 	type:"GET",
+	 	dataType:"jsonp",
+	 	async:true,
+	 	success: function(e) {
+	 		componentWebMain_varStateCandidate=e;
+	 		parseBill(e,refreshPage);
+	 		},
+	 	error: function() {
+	 		alert('error');
+	 		}
+	 }
+	 );
+	}
+	
+function refreshPage() {
+	$$('componentWebMain_radioChoice').show();
+}
+
+function parseBill(objJson, callback) {
+	arrStateCandidate=[];
+	for (var i=0; i<objJson.length; i++) {
+		varCand=objJson[i];
+		arrStateCandidate.push(
+		{party:varCand.party, 
+		chamber:varCand.chamber, 
+		district:varCand.district, 
+		full_name:varCand.full_name,
+		first_name:varCand.first_name,
+		last_name:varCand.last_name,
+		leg_id:varCand.leg_id,
+		photo_url:varCand.photo_url,
+		url:varCand.url});
+	};
+	callback();
+}	
 
 function drawAction(data) {
 	"use strict";
@@ -86,12 +138,21 @@ function drawSponsor(data) {
 			.enter()
 			.append("li")
 			.text(function (d) {
-				  return String.fromCharCode(8226) + " " + d.leg_id + ", " + d.name + ", " + d.official_type;
+				  return String.fromCharCode(8226) + " " + d.leg_id + ", " + d.official_type + ", " + cDetails(d.leg_id).full_name + ", " + cDetails(d.leg_id).party;
 			  });
 		$('#Action').before("<p class='Title'>Sponsors</p>")
 	
 	
 };
+
+function cDetails(leg_id) {
+	s=arrStateCandidate
+	for (var i=0; i<s.length; i++) {
+		if(s[i].leg_id == leg_id) {
+			return s[i]
+		}
+	}
+}
 
 function drawVote(data) {
 	"use strict";
@@ -138,7 +199,7 @@ function drawYes(data, subj, callback) {
 			.on("mouseenter", showVoterDetailIn)
 			.on("mouseleave", showVoterDetailOut)			
 			.text(function (d) {
-				  return String.fromCharCode(8226) + " " + d.leg_id + ", " + d.name 
+				  return String.fromCharCode(8226) + " " + d.leg_id + ", " + cDetails(d.leg_id).full_name + ", " + cDetails(d.leg_id).party;
 			  })
 			 .on('click', candidateVoteHistory);
 		$('#Action').before("<p class='Title'>Voted Yes to '" + subj + "'</p>")
@@ -158,7 +219,7 @@ function drawNo(data, subj) {
 			.on("mouseenter", showVoterDetailIn)
 			.on("mouseleave", showVoterDetailOut)			
 			.text(function (d) {
-				  return String.fromCharCode(8226) + " " + d.leg_id + ", " + d.name 
+				  return String.fromCharCode(8226) + " " + d.leg_id + ", " + cDetails(d.leg_id).full_name + ", " + cDetails(d.leg_id).party;
 			  })
 			 .on('click', candidateVoteHistory);
 		$('#no').before("<p class='Title'>Voted No</p>")	

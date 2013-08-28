@@ -99,15 +99,15 @@ function callURL(varStr) {
 	}
 	
 function refreshPage() {
-	source.componentWebMain_arrStateCandidate.sync();
+	source.arrStateCandidate.sync();
 	$('#componentWebMain_richText5').html("")
 }
 	
 function parseBill(objJson, callback) {
-	componentWebMain_arrStateCandidate=[];
+	arrStateCandidate=[];
 	for (var i=0; i<objJson.length; i++) {
 		varCand=objJson[i];
-		componentWebMain_arrStateCandidate.push(
+		arrStateCandidate.push(
 		{party:varCand.party, 
 		chamber:varCand.chamber, 
 		district:varCand.district, 
@@ -129,8 +129,7 @@ function parseBill(objJson, callback) {
 
 	buttonVotingRecord.click = function buttonVotingRecord_click (event)// @startlock
 	{// @endlock
-		//debugger;
-		candidateID=source.componentWebMain_arrStateCandidate.leg_id
+		candidateID=source.arrStateCandidate.leg_id
 		if (source.arrBill == undefined) {
 			$('#componentWebMain_richText5').html("Please do a bill search first")
 		}
@@ -189,8 +188,7 @@ function parseVotes(e, candidateID, title) {
 		for (var j=0; j<e.votes[i].no_votes.length; j++)
 		{
 			if (candidateID == e.votes[i].no_votes[j].leg_id) {
-			//debugger;
-			componentWebMain_arrCandVote.push({
+				componentWebMain_arrCandVote.push({
 				candidateID:candidateID, 
 				name:e.votes[i].yes_votes[j].name,
 				voteValue:'no', 
@@ -203,7 +201,6 @@ function parseVotes(e, candidateID, title) {
 		for (var k=0; k<e.votes[i].yes_votes.length; k++)
 		{
 			if (candidateID == e.votes[i].yes_votes[k].leg_id) {
-			//debugger;
 			componentWebMain_arrCandVote.push({
 				candidateID:candidateID, 
 				name:e.votes[i].yes_votes[k].name,
@@ -221,7 +218,7 @@ function parseVotes(e, candidateID, title) {
 }
 
 function showRecord(i, lEngth) {
-//debugger;
+
 if(i<lEngth-1) {
 
 	$('#componentWebMain_richText5').html("processing ...");

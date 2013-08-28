@@ -58,10 +58,10 @@
 }
 
 #{id}richText2 {
-	 width: 130px;
-	 height: 16px;
+	 width: 144px;
+	 height: 15px;
 	 top: 3px;
-	 left: 171px;
+	 left: 365px;
 	
 	 position: absolute;
 	 background-color: rgb(255, 255, 255);
@@ -69,7 +69,7 @@
 }
 
 #{id}richText1 {
-	 width: 97px;
+	 width: 300px;
 	 height: 16px;
 	 top: 2px;
 	 left: 3px;
